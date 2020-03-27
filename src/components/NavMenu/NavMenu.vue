@@ -5,10 +5,10 @@
         <!-- <a href="/"
           ><img
             id="fullZicon"
-            src="images/ZoozlerLogoSKYE.png"
+            src="images/cauliflower.png"
             width="120px"
             height="auto"
-            alt="Zoozler Icon"
+            alt="Icon"
         /></a> -->
         <li class="active"><a id="one" href="/art">Art</a></li>
         <li><a id="two" href="/code">Code</a></li>
@@ -24,29 +24,26 @@
             <li><a id="dropfive" href="/videography">Videography</a></li>
           </ul>
         </li> -->
-        <!-- <li><a id="four" href="/contact">Contact Us</a></li> -->
+        <!-- <li><a id="four" href="/contact">Contact</a></li> -->
       </ul>
     </nav>
     <!--end "nav"-->
 
-    <div id="hamburgerz">
+    <!-- <div id="hamburgerz">
       <a id="nav-toggle" href="#"><span></span></a>
 
       <ul id="hamburgermenu">
         <li id="hamburger">
           <ul>
             <li><a href="/about">About Us</a></li>
-            <li><a href="/services">Our Services</a></li>
-            <li><a href="/websites">Websites</a></li>
             <li><a href="/logos">Logo Design</a></li>
-            <li><a href="/ads">Advertisements</a></li>
             <li><a href="/photography">Photography</a></li>
             <li><a href="/videography">Videography</a></li>
             <li><a class="pad" href="/contact">Contact Us</a></li>
           </ul>
         </li>
       </ul>
-    </div>
+    </div> -->
   </header>
 </template>
 
