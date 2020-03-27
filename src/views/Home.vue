@@ -1,18 +1,35 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
+    <nav-menu />
+    <div id="selfieAscii"></div>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from "@/components/HelloWorld.vue";
+import NavMenu from "@/components/NavMenu/NavMenu.vue";
 
 export default {
   name: "Home",
   components: {
-    HelloWorld
+    NavMenu
   }
 };
 </script>
+
+<style lang="scss">
+body {
+  margin: 0;
+  background: white;
+}
+#selfieAscii {
+  position: absolute;
+  bottom: 0;
+  background-image: url("/SelfieAscii.png");
+  background-color: white;
+  height: 90vh;
+  width: 100%;
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+</style>

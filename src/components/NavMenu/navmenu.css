@@ -1,0 +1,533 @@
+@import url(http://fonts.googleapis.com/css?family=Raleway);
+
+#cssmenu.active {
+  margin-left: 10%;
+}
+
+#cssmenu {
+  line-height: 1;
+  z-index: 99;
+  width: 100%;
+}
+
+#cssmenu>ul {
+  background: white;
+  margin-left: calc(50% - 120px) !important;
+  z-index: 99;
+}
+
+#cssmenu ul li {
+  min-width: 120px;
+  margin-left: auto;
+  margin-right: auto;
+
+}
+
+#cssmenu,
+#cssmenu ul,
+#cssmenu ul li,
+#cssmenu ul li a,
+#cssmenu #menu-button {
+  text-align: center;
+  margin: 0 auto;
+  padding: 0;
+  border: 0;
+  list-style: none;
+  line-height: 1;
+  display: block;
+  position: relative;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+#cssmenu ul li a {
+  border: none;
+  box-sizing: border-box;
+}
+
+#cssmenu:after,
+#cssmenu>ul:after {
+  content: ".";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+  height: 0;
+}
+
+#cssmenu #menu-button {
+  display: none;
+}
+
+#cssmenu>ul>li {
+  float: left;
+  -webkit-perspective: 1000px;
+  -moz-perspective: 1000px;
+  -o-perspective: 1000px;
+  perspective: 1000px;
+}
+
+#cssmenu.align-center>ul {
+  font-size: 0;
+  text-align: center;
+}
+
+#cssmenu.align-center>ul>li {
+  display: inline-block;
+  float: none;
+}
+
+#cssmenu.align-right>ul>li {
+  float: right;
+
+}
+
+#cssmenu>ul>li>a {
+  padding: 16px 20px;
+  font-size: 12pt;
+  color: #8C8479;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  text-decoration: none;
+  background: white;
+  -webkit-transition: all .3s;
+  -moz-transition: all .3s;
+  -o-transition: all .3s;
+  transition: all .3s;
+  -webkit-transform-origin: 50% 0;
+  -moz-transform-origin: 50% 0;
+  -o-transform-origin: 50% 0;
+  transform-origin: 50% 0;
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  -o-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+}
+
+#cssmenu ul li ul li.active {
+  color: #8C8479;
+  margin-left: 0 !important;
+
+}
+
+#cssmenu>ul>li:hover>a,
+#cssmenu>ul>li>a:hover {
+  color: #8C8479;
+  background-color: #d6d6d6;
+  -webkit-transform: rotateX(90deg) translateY(-23px);
+  -moz-transform: rotateX(90deg) translateY(-23px);
+  -o-transform: rotateX(90deg) translateY(-23px);
+  transform: rotateX(90deg) translateY(-23px);
+  -ms-transform: none;
+
+  position: relative;
+
+}
+
+#cssmenu>ul>li>a::before {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  padding: 16px 20px;
+  color: #8C8479;
+  background: #781e32;
+  content: attr(data-title);
+  -webkit-transition: background .2s;
+  -moz-transition: background .2s;
+  -o-transition: background .2s;
+  transition: background .2s;
+  -webkit-transform: rotateX(-90deg);
+  -moz-transform: rotateX(-90deg);
+  -o-transform: rotateX(-90deg);
+  transform: rotateX(-90deg);
+  -webkit-transform-origin: 50% 0;
+  -moz-transform-origin: 50% 0;
+  -o-transform-origin: 50% 0;
+  transform-origin: 50% 0;
+  -ms-transform: translateY(- -18px);
+}
+
+#cssmenu>ul>li>a::before {
+  background-color: white;
+}
+
+#cssmenu>ul>li>a[id="one"]::before {
+  content: "ART";
+}
+
+#cssmenu>ul>li>a[id="two"]::before {
+  content: "CODE";
+}
+
+/* #cssmenu > ul > li > a[id="three"]::before {
+  content: "PORTFOLIO";
+}
+#cssmenu > ul > li > a[id="four"]::before {
+  content: "CONTACT US";
+} */
+
+#cssmenu>ul>li:hover>a::before,
+#cssmenu>ul>li>a:hover::before {
+  background: white;
+}
+
+#cssmenu.small-screen {
+  width: 100%;
+}
+
+#cssmenu.small-screen>ul,
+#cssmenu.small-screen.align-center>ul {
+  width: 100%;
+  text-align: left;
+}
+
+#cssmenu.small-screen>ul>li,
+#cssmenu.small-screen.align-center {
+  float: none;
+  display: block;
+  border-top: 1px solid rgba(100, 100, 100, 0.1);
+}
+
+#cssmenu.small-screen>ul>li:hover>a,
+#cssmenu.small-screen>ul>li>a:hover {
+  color: #d6d6d6;
+  -webkit-transform: none;
+  -moz-transform: none;
+  -o-transform: none;
+  transform: none;
+  -ms-transform: none;
+
+}
+
+#cssmenu.small-screen>ul>li>a::before {
+  display: none;
+}
+
+#cssmenu.small-screen #menu-button {
+  display: block;
+  padding: 16px 20px;
+  cursor: pointer;
+  font-size: 14px;
+  text-decoration: none;
+  color: #ee382f;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  background: white;
+}
+
+#cssmenu.small-screen #menu-button:after {
+  content: "";
+  position: absolute;
+  right: 20px;
+  top: 17px;
+  display: block;
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  -o-box-sizing: content-box;
+  box-sizing: content-box;
+  border-top: 2px solid #ffffff;
+  border-bottom: 2px solid #ffffff;
+  width: 22px;
+  height: 3px;
+}
+
+#cssmenu.small-screen #menu-button.menu-opened:after {
+  border-top: 2px solid white;
+  border-bottom: 2px solid white;
+}
+
+#cssmenu.small-screen #menu-button:before {
+  content: "";
+  position: absolute;
+  right: 20px;
+  top: 27px;
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: #ffffff;
+}
+
+#cssmenu.small-screen #menu-button.menu-opened:before {
+  background: white;
+}
+
+
+
+/*Dropdown Menu*/
+#cssmenu ul li ul li {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#cssmenu ul li ul li,
+#cssmenu ul li ul li a {}
+
+#cssmenu,
+#cssmenu ul ul,
+#cssmenu ul li ul li,
+#cssmenu ul li ul li a,
+#cssmenu #menu-button {
+  text-align: center;
+  margin: 0 auto;
+  padding: 0;
+  border: 0;
+  list-style: none;
+  line-height: 1.1;
+  display: block;
+  position: relative;
+  -o-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/*HIDE*/
+#cssmenu ul ul {
+  position: absolute;
+  left: -9999px;
+  /* Hide off-screen when not needed (this is more accessible than display:none;) */
+}
+
+/*SHOW*/
+#cssmenu ul li:hover ul {
+
+  left: 0px;
+}
+
+#cssmenu ul li ul li a {
+  border: 1px solid #d6d6d6;
+  border-sizing: border-box;
+
+}
+
+#cssmenu:after,
+#cssmenu>ul>li>ul:after {
+  content: ".";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+  height: 0;
+}
+
+#cssmenu #menu-button {
+  display: none;
+}
+
+#cssmenu {
+  width: auto;
+  line-height: 1;
+}
+
+#cssmenu>ul>li>ul {
+  background: white;
+}
+
+#cssmenu>ul>ul>li {
+  float: left;
+  -webkit-perspective: 1000px;
+  -moz-perspective: 1000px;
+  -o-perspective: 1000px;
+  perspective: 1000px;
+}
+
+#cssmenu.align-center>ul {
+  font-size: 0;
+  text-align: center;
+}
+
+#cssmenu.align-center>ul>li {
+  display: inline-block;
+  float: none;
+}
+
+#cssmenu.align-right>ul>li {
+  float: right;
+}
+
+#cssmenu>ul>li>ul>li a {
+  padding: 16px 20px;
+  font-size: 12pt;
+  color: #ee382f;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  text-decoration: none;
+  background: white;
+  -webkit-transition: all .3s;
+  -moz-transition: all .3s;
+  -o-transition: all .3s;
+  transition: all .3s;
+  -webkit-transform-origin: 50% 0;
+  -moz-transform-origin: 50% 0;
+  -o-transform-origin: 50% 0;
+  transform-origin: 50% 0;
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  -o-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+}
+
+#cssmenu>ul>li>ul>li.active>a {
+  color: #ee382f;
+}
+
+#cssmenu>ul>li>ul>li:hover>a,
+#cssmenu>ul>li>ul>li>a:hover {
+  color: #ee382f;
+  background-color: #d6d6d6;
+  -webkit-transform: rotateX(90deg) translateY(-23px);
+  -moz-transform: rotateX(90deg) translateY(-23px);
+  -o-transform: rotateX(90deg) translateY(-23px);
+  transform: rotateX(90deg) translateY(-23px);
+  -ms-transform: none;
+
+}
+
+#cssmenu ul li ul li a::before {
+  position: absolute;
+  top: 100%;
+  left: 0;
+
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  padding: 16px 5px;
+  color: #ee382f;
+  background: #fafafa;
+  content: attr(data-title);
+  -webkit-transition: background .2s;
+  -moz-transition: background .2s;
+  -o-transition: background .2s;
+  transition: background .2s;
+  -webkit-transform: rotateX(-90deg);
+  -moz-transform: rotateX(-90deg);
+  -o-transform: rotateX(-90deg);
+  transform: rotateX(-90deg);
+  -webkit-transform-origin: 50% 0;
+  -moz-transform-origin: 50% 0;
+  -o-transform-origin: 50% 0;
+  transform-origin: 50% 0;
+  -ms-transform: translateY(- -18px);
+}
+
+
+#cssmenu ul li ul li a#dropone1::before {
+  content: "Our Team";
+}
+
+#cssmenu ul li ul li a#dropone::before {
+  content: "Websites";
+}
+
+#cssmenu>ul>li>ul>li>a[id="droptwo"]::before {
+  content: "Logo Design";
+}
+
+#cssmenu>ul>li>ul>li>a[id="dropthree"]::before {
+  content: "Advertisements";
+}
+
+#cssmenu>ul>li>ul>li>a[id="dropfour"]::before {
+  content: "Photography";
+}
+
+#cssmenu>ul>li>ul>li>a[id="dropfive"]::before {
+  content: "Videography";
+}
+
+#cssmenu>ul>ul>li:hover>a::before,
+#cssmenu>ul>ul>li>a:hover::before {
+  background: #d6d6d6;
+}
+
+#cssmenu.small-screen {
+  width: 100%;
+}
+
+#cssmenu.small-screen>ul,
+#cssmenu.small-screen.align-center>ul {
+  width: 100%;
+  text-align: left;
+}
+
+#cssmenu.small-screen>ul>li,
+#cssmenu.small-screen.align-center {
+  float: none;
+  display: block;
+  border-top: 1px solid rgba(100, 100, 100, 0.1);
+}
+
+#cssmenu.small-screen>ul>ul>li:hover>a,
+#cssmenu.small-screen>ul>ul>li>a:hover {
+  color: #ee382f;
+  -webkit-transform: none;
+  -moz-transform: none;
+  -o-transform: none;
+  transform: none;
+  -ms-transform: none;
+
+}
+
+#cssmenu.small-screen>ul>ul>li>a::before {
+  display: none;
+}
+
+#cssmenu.small-screen #menu-button {
+  display: block;
+  padding: 16px 20px;
+  cursor: pointer;
+  font-size: 14px;
+  text-decoration: none;
+  color: #ee382f;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  background: #d6d6d6;
+}
+
+#cssmenu.small-screen #menu-button:after {
+  content: "";
+  position: absolute;
+  right: 20px;
+  top: 17px;
+  display: block;
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  -o-box-sizing: content-box;
+  box-sizing: content-box;
+  border-top: 2px solid #ffffff;
+  border-bottom: 2px solid #ffffff;
+  width: 22px;
+  height: 3px;
+}
+
+#cssmenu.small-screen #menu-button.menu-opened:after {
+  border-top: 2px solid white;
+  border-bottom: 2px solid white;
+}
+
+#cssmenu.small-screen #menu-button:before {
+  content: "";
+  position: absolute;
+  right: 20px;
+  top: 27px;
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: #ffffff;
+}
+
+#cssmenu.small-screen #menu-button.menu-opened:before {
+  background: #d6d6d6;
+}
