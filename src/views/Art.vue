@@ -106,7 +106,7 @@ export default class Art extends Vue {
 <style lang="scss" scoped>
 #container {
   margin: 0;
-  font-family: "Roboto";
+  font-family: "Ubuntu", sans-serif !important;
   font-size: 16px;
   display: flex;
   flex-direction: column;
@@ -146,7 +146,7 @@ $theta: 2 * 3.141592653589793 / $n;
 $apothem: 482.842712474619px;
 
 .carousel {
-  padding: 20px;
+  padding: 50px;
 
   perspective: $viewer-distance;
   overflow: hidden;

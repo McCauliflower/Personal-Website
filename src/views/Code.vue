@@ -1,14 +1,341 @@
 <template>
-  <div class="code">
-    <h1>Code page</h1>
+  <div id="container">
+    <Spider />
+    <section id="gallery">
+      <div class="thumbnail">
+        <div class="img-container">
+          <a href>
+            <img
+              src="https://41.media.tumblr.com/c5d1ac7b9669b3bbb20ebb8444cb702a/tumblr_nxrgstujWX1sfie3io1_1280.jpg"
+              alt="..."
+            />
+            <div class="img-caption table">
+              <span class="table-cell">
+                <button class="btn btn-p btn-trans" role="button">View</button>
+              </span>
+            </div>
+          </a>
+        </div>
+      </div>
+      <div class="thumbnail">
+        <div class="img-container">
+          <img
+            src="https://41.media.tumblr.com/21bb8666deab37f6d49724d1b795ad61/tumblr_nxrgsrYO5Q1sfie3io1_1280.jpg"
+            alt="..."
+          />
+          <div class="img-caption table">
+            <span class="table-cell">
+              <button class="btn btn-p btn-trans" role="button">View</button>
+            </span>
+          </div>
+        </div>
+      </div>
+      <div class="thumbnail">
+        <div class="img-container">
+          <img
+            src="https://36.media.tumblr.com/838c3355f7af5efb810118319886cc4d/tumblr_nxk0gn1oAF1sfie3io1_1280.jpg"
+            alt="..."
+          />
+          <div class="img-caption table">
+            <span class="table-cell">
+              <button class="btn btn-p btn-trans" role="button">View</button>
+            </span>
+          </div>
+        </div>
+      </div>
+      <div class="thumbnail">
+        <div class="img-container">
+          <img
+            src="https://40.media.tumblr.com/63f6e4872c0e3e9337c076a9db2b800f/tumblr_nxk0ghO9br1sfie3io1_1280.jpg"
+            alt="..."
+          />
+          <div class="img-caption table">
+            <span class="table-cell">
+              <button class="btn btn-p btn-trans" role="button">View</button>
+            </span>
+          </div>
+        </div>
+      </div>
+      <div class="thumbnail">
+        <div class="img-container">
+          <img
+            src="https://40.media.tumblr.com/1737973fac23511856e8f44c24497cf7/tumblr_nvup8h1pon1sfie3io1_1280.jpg"
+            alt="..."
+          />
+          <div class="img-caption table">
+            <span class="table-cell">
+              <button class="btn btn-p btn-trans" role="button">View</button>
+            </span>
+          </div>
+        </div>
+      </div>
+      <div class="thumbnail">
+        <div class="img-container">
+          <img
+            src="https://40.media.tumblr.com/565c0d8da9d4f5fca0bba083ee43171b/tumblr_nvuozamnbR1sfie3io1_1280.jpg"
+            alt="..."
+          />
+          <div class="img-caption table">
+            <span class="table-cell">
+              <button class="btn btn-p btn-trans" role="button">View</button>
+            </span>
+          </div>
+        </div>
+      </div>
+      <div class="thumbnail">
+        <div class="img-container">
+          <img
+            src="https://40.media.tumblr.com/765f0e85606e029c185088685223b5dc/tumblr_nvuoz39fFT1sfie3io1_1280.jpg"
+            alt="..."
+          />
+          <div class="img-caption table">
+            <span class="table-cell">
+              <button class="btn btn-p btn-trans" role="button">View</button>
+            </span>
+          </div>
+        </div>
+      </div>
+      <div class="thumbnail">
+        <div class="img-container">
+          <img
+            src="https://40.media.tumblr.com/8a3a1ab1eaeaaeb2306d50df051930c4/tumblr_nvuoz0xDRZ1sfie3io1_1280.jpg"
+            alt="..."
+          />
+          <div class="img-caption table">
+            <span class="table-cell">
+              <button class="btn btn-p btn-trans" role="button">View</button>
+            </span>
+          </div>
+        </div>
+      </div>
+      <div class="thumbnail">
+        <div class="img-container">
+          <img
+            src="https://41.media.tumblr.com/4251d957707c195dacd2bec13b2f67c1/tumblr_nvuoofddGR1sfie3io1_1280.jpg"
+            alt="..."
+          />
+          <div class="img-caption table">
+            <span class="table-cell">
+              <button class="btn btn-p btn-trans" role="button">View</button>
+            </span>
+          </div>
+        </div>
+      </div>
+      <div class="thumbnail">
+        <div class="img-container">
+          <img
+            src="https://40.media.tumblr.com/2d87bcab0408eb0244edd4af38325dac/tumblr_nvm0diPG8H1sfie3io1_1280.jpg"
+            alt="..."
+          />
+          <div class="img-caption table">
+            <span class="table-cell">
+              <button class="btn btn-p btn-trans" role="button">View</button>
+            </span>
+          </div>
+        </div>
+      </div>
+      <div class="thumbnail">
+        <div class="img-container">
+          <img
+            src="https://41.media.tumblr.com/f001942d40a60589d601273cf82bb1a2/tumblr_nvuoobz21w1sfie3io1_1280.jpg"
+            alt="..."
+          />
+          <div class="img-caption table">
+            <span class="table-cell">
+              <button class="btn btn-p btn-trans" role="button">View</button>
+            </span>
+          </div>
+        </div>
+      </div>
+      <div class="thumbnail">
+        <div class="img-container">
+          <img
+            src="https://40.media.tumblr.com/3b7733f03aae7f2e492a80f2308d3381/tumblr_ntgu7aT5Vm1sfie3io1_1280.jpg"
+            alt="..."
+          />
+          <div class="img-caption table">
+            <span class="table-cell">
+              <button class="btn btn-p btn-trans" role="button">View</button>
+            </span>
+          </div>
+        </div>
+      </div>
+    </section>
   </div>
 </template>
 
-<script>
-export default {
-  name: "Code",
-  components: {}
-};
+<script lang="ts">
+import Vue from "vue";
+import { Component } from "vue-property-decorator";
+import Spider from "@/components/Spider.vue";
+@Component({
+  components: {
+    Spider
+  }
+})
+export default class Code extends Vue {}
 </script>
 
-<style lang="scss"></style>
+<style lang="scss" scoped>
+$font-family: "Ubuntu", sans-serif;
+$font-size-base: 16px;
+$font-weight: 100;
+$bg-color: #444;
+$bg-color2: #666;
+$almost-white: rgb(255, 255, 255);
+$btn-transparent-color: rgb(247, 243, 212);
+$btn-transparent-bg: rgba(145, 143, 131, 0.5);
+
+#container {
+  margin: 0;
+  min-height: 100vh;
+}
+
+html {
+  background: linear-gradient($bg-color, $bg-color2);
+  min-height: 100%;
+  font-family: $font-family;
+}
+#gallery {
+  max-width: 960px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 150px 0 360px 0;
+  p {
+    color: $almost-white;
+    padding: 0 40px;
+  }
+
+  .thumbnail {
+    float: left;
+    position: relative;
+    width: 15%;
+    padding-bottom: 15%;
+    margin: 0.83%;
+    overflow: hidden;
+    &:hover {
+      -webkit-box-shadow: 5px 5px 50px 0px rgba(0, 0, 0, 0.75);
+      -moz-box-shadow: 5px 5px 50px 0px rgba(0, 0, 0, 0.75);
+      box-shadow: 5px 5px 50px 0px rgba(0, 0, 0, 0.75);
+    }
+  }
+
+  .img-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    img {
+      width: auto;
+      -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+    }
+    &:hover .img-caption {
+      top: 0;
+      left: 0;
+      .btn-trans {
+        background: rgba(255, 255, 255, 0.4);
+        border: 1px solid lightgrey;
+      }
+    }
+  }
+
+  .img-caption {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    text-align: center;
+  }
+  .table {
+    display: table;
+    .table-cell {
+      display: table-cell;
+      vertical-align: middle;
+      border: 2px solid lightgrey;
+    }
+  }
+  .btn {
+    border: none;
+    font-size: inherit;
+    font-weight: $font-weight;
+    color: $btn-transparent-color;
+    display: inline-block;
+    text-transform: uppercase;
+    position: relative;
+    border: 1px solid lightgrey;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+    &:before {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      -webkit-transition: all 0.3s;
+      -moz-transition: all 0.3s;
+      transition: all 0.3s;
+    }
+    &::after {
+      line-height: 1;
+      position: relative;
+      -webkit-font-smoothing: antialiased;
+    }
+  }
+  .btn-sep {
+    margin: 30px 0px;
+  }
+  .btn-p {
+    font-size: $font-size-base;
+    padding: 10px 20px;
+    cursor: pointer;
+  }
+
+  .btn-trans {
+    background: $btn-transparent-bg;
+    color: grey
+    &:hover {
+      background: rgba(255, 255, 255, 0.4);
+    }
+    &:active {
+      background: rgba(255, 255, 255, 0.4);
+    }
+  }
+
+  @media screen and (max-width: 992px) {
+    .thumbnail {
+      width: 22%;
+      padding-bottom: 22%;
+      margin: 1.5%;
+    }
+    .img-container:hover .img-caption {
+      top: 0;
+      left: 0;
+    }
+
+    .img-caption {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.7);
+      text-align: center;
+      a {
+        color:  lightgrey;
+      }
+    }
+  }
+  @media screen and (max-width: 720px) {
+    .thumbnail {
+      width: 29%;
+      padding-bottom: 29%;
+      margin: 2.16%;
+    }
+  }
+  @media screen and (max-width: 470px) {
+    .thumbnail {
+      width: 44%;
+      padding-bottom: 44%;
+      margin: 3%;
+    }
+  }
+}
+</style>

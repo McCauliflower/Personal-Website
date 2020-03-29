@@ -7,14 +7,62 @@
 
 /* MARGINS, PADDING & FONT SIZE 
 -------------------------------------------------- */
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, font, img, ins, kbd, q, s, samp,
-small, strike, sub, sup, tt, var,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td {
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+font,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+sub,
+sup,
+tt,
+var,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td {
 	margin: 0;
 	padding: 0;
 	border: 0;
@@ -24,9 +72,15 @@ table, caption, tbody, tfoot, thead, tr, th, td {
 	background: transparent;
 }
 
-address,caption,cite,code,dfn,th,var {
-	font-style:normal;
-	font-weight:normal;
+address,
+caption,
+cite,
+code,
+dfn,
+th,
+var {
+	font-style: normal;
+	font-weight: normal;
 }
 
 body {
@@ -44,12 +98,12 @@ p {
 caption,
 th {
 	font-weight: bold;
-	text-align:left;
+	text-align: left;
 }
 
 table {
-	border-collapse:collapse;
-	border-spacing:0;
+	border-collapse: collapse;
+	border-spacing: 0;
 }
 
 
@@ -70,14 +124,14 @@ legend {
 /* BORDERS 
 -------------------------------------------------- */
 img {
-	border:0;
+	border: 0;
 }
 
 
 abbr,
 acronym {
 	border-bottom: 1px dotted #666;
-	cursor:help;
+	cursor: help;
 }
 
 
@@ -88,12 +142,12 @@ del {
 	text-decoration: line-through;
 }
 
-blockquote, 
+blockquote,
 q {
 	quotes: none;
 }
 
-blockquote:before, 
+blockquote:before,
 blockquote:after,
 q:before,
 q:after {
@@ -102,36 +156,36 @@ q:after {
 }
 
 dfn {
-    font-style: italic;
+	font-style: italic;
 }
 
 code,
 kbd,
 pre,
 samp {
-    font-family: monospace, serif;
+	font-family: monospace, serif;
 }
 
 pre {
-    white-space: pre;
-    white-space: pre-wrap;
-    word-wrap: break-word;
+	white-space: pre;
+	white-space: pre-wrap;
+	word-wrap: break-word;
 }
 
 sub,
 sup {
-    font-size: 75%;
-    line-height: 0;
-    position: relative;
-    vertical-align: baseline;
+	font-size: 75%;
+	line-height: 0;
+	position: relative;
+	vertical-align: baseline;
 }
 
 sup {
-    top: -0.5em;
+	top: -0.5em;
 }
 
 sub {
-    bottom: -0.25em;
+	bottom: -0.25em;
 }
 
 
@@ -149,36 +203,36 @@ hgroup,
 nav,
 section,
 summary {
-    display: block;
+	display: block;
 }
 
 /*Corrects `inline-block` display not defined in IE 8/9 */
 audio,
 canvas,
 video {
-    display: inline-block;
+	display: inline-block;
 }
 
 /* Prevents modern browsers from displaying `audio` without controls.
    Remove excess height in iOS 5 devices.  */
 
 audio:not([controls]) {
-    display: none;
-    height: 0;
+	display: none;
+	height: 0;
 }
 
 
 /* Addresses styling for `hidden` attribute not present in IE 8/9 */
 [hidden] {
-    display: none;
+	display: none;
 }
 
 /* Corrects overflow displayed oddly in IE 9.  */
 svg:not(:root) {
-    overflow: hidden;
+	overflow: hidden;
 }
 
 /* Addresses margin not present in IE 8/9 and Safari 5. */
 figure {
-    margin: 0;
+	margin: 0;
 }
