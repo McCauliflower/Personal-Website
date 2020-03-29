@@ -5,22 +5,28 @@
       <figure>
         <img
           class="image"
-          src="/Bio_Mechanical_Binary_Forest.jpg"
+          src="/art/bioMechanicalBinaryForest.jpg"
           alt="Binary Forest Art"
         />
         <img class="image" src="/cubes.png" alt="Cubes Art" />
         <img
           class="image"
-          src="/forest-fire.png"
+          src="art/forestFire.png"
           alt="Forest Fire Art"
-          style="padding-top: 50px; width: 110%; height: 90%;"
+          style="margin-top: 50px; width: 100%; height: 80%;"
         />
         <img class="image" src="/landscape.jpg" alt="Landscape Art" />
-        <img class="image" src="/Paint-tear.jpg" alt="Paint tear Art" />
         <img
           class="image"
-          src="/Planting_the_seeds_of_Life.jpeg"
+          src="/paintTear.jpg"
+          alt="Paint tear Art"
+          style="margin-top: 10px"
+        />
+        <img
+          class="image"
+          src="/art/plantingTheSeedsOfLife.jpeg"
           alt="Planting the seeds of Life Art"
+          style="margin-top: -25px"
         />
         <img
           class="image"
@@ -29,9 +35,15 @@
         />
         <img
           class="image"
-          src="/The_eye_of_horus.jpg"
+          src="/art/theEyeOfHorus.jpg"
           alt="The Eye of Horus Art"
           style="margin-top: -35px;"
+        />
+        <img
+          class="image"
+          src="/lucious.jpg"
+          alt="Lucious Art"
+          style="margin-top: -25px"
         />
       </figure>
       <nav @click.stop="">
@@ -136,7 +148,7 @@ nav {
 }
 
 // Carousel configuration parameters
-$n: 8;
+$n: 9;
 $item-width: 400px;
 $item-separation: 80px;
 $viewer-distance: 500px;

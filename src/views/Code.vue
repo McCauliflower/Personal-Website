@@ -4,25 +4,7 @@
     <section id="gallery">
       <div class="thumbnail">
         <div class="img-container">
-          <a href>
-            <img
-              src="https://41.media.tumblr.com/c5d1ac7b9669b3bbb20ebb8444cb702a/tumblr_nxrgstujWX1sfie3io1_1280.jpg"
-              alt="..."
-            />
-            <div class="img-caption table">
-              <span class="table-cell">
-                <button class="btn btn-p btn-trans" role="button">View</button>
-              </span>
-            </div>
-          </a>
-        </div>
-      </div>
-      <div class="thumbnail">
-        <div class="img-container">
-          <img
-            src="https://41.media.tumblr.com/21bb8666deab37f6d49724d1b795ad61/tumblr_nxrgsrYO5Q1sfie3io1_1280.jpg"
-            alt="..."
-          />
+          <div class="divz size"></div>
           <div class="img-caption table">
             <span class="table-cell">
               <button class="btn btn-p btn-trans" role="button">View</button>
@@ -32,10 +14,7 @@
       </div>
       <div class="thumbnail">
         <div class="img-container">
-          <img
-            src="https://36.media.tumblr.com/838c3355f7af5efb810118319886cc4d/tumblr_nxk0gn1oAF1sfie3io1_1280.jpg"
-            alt="..."
-          />
+          <div class="robotBuilder size"></div>
           <div class="img-caption table">
             <span class="table-cell">
               <button class="btn btn-p btn-trans" role="button">View</button>
@@ -45,10 +24,7 @@
       </div>
       <div class="thumbnail">
         <div class="img-container">
-          <img
-            src="https://40.media.tumblr.com/63f6e4872c0e3e9337c076a9db2b800f/tumblr_nxk0ghO9br1sfie3io1_1280.jpg"
-            alt="..."
-          />
+          <div class="thesis size"></div>
           <div class="img-caption table">
             <span class="table-cell">
               <button class="btn btn-p btn-trans" role="button">View</button>
@@ -57,22 +33,29 @@
         </div>
       </div>
       <div class="thumbnail">
+        <div class="img-container">
+          <div class="dragAndDrop size"></div>
+          <div class="img-caption table">
+            <span class="table-cell">
+              <button class="btn btn-p btn-trans" role="button">View</button>
+            </span>
+          </div>
+        </div>
+      </div>
+      <div class="thumbnail">
+        <div class="img-container">
+          <div class="ballpit size"></div>
+          <div class="img-caption table">
+            <span class="table-cell">
+              <button class="btn btn-p btn-trans" role="button">View</button>
+            </span>
+          </div>
+        </div>
+      </div>
+      <!-- <div class="thumbnail">
         <div class="img-container">
           <img
             src="https://40.media.tumblr.com/1737973fac23511856e8f44c24497cf7/tumblr_nvup8h1pon1sfie3io1_1280.jpg"
-            alt="..."
-          />
-          <div class="img-caption table">
-            <span class="table-cell">
-              <button class="btn btn-p btn-trans" role="button">View</button>
-            </span>
-          </div>
-        </div>
-      </div>
-      <div class="thumbnail">
-        <div class="img-container">
-          <img
-            src="https://40.media.tumblr.com/565c0d8da9d4f5fca0bba083ee43171b/tumblr_nvuozamnbR1sfie3io1_1280.jpg"
             alt="..."
           />
           <div class="img-caption table">
@@ -159,7 +142,7 @@
             </span>
           </div>
         </div>
-      </div>
+      </div> -->
     </section>
   </div>
 </template>
@@ -177,7 +160,7 @@ export default class Code extends Vue {}
 </script>
 
 <style lang="scss" scoped>
-$font-family: "Ubuntu", sans-serif;
+$font-family: "Ubuntu", sans-serif !important;
 $font-size-base: 16px;
 $font-weight: 100;
 $bg-color: #444;
@@ -189,6 +172,28 @@ $btn-transparent-bg: rgba(145, 143, 131, 0.5);
 #container {
   margin: 0;
   min-height: 100vh;
+}
+.size{
+  height: 100%;
+  background-color: white;
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.divz{
+  background-image: url("/code/divz.jpg");
+}
+.robotBuilder{
+  background-image: url("/code/robotBuilder.png");
+}
+.thesis{
+  background-image: url("/code/thesis.jpg");
+}
+.dragAndDrop{
+  background-image: url("/code/vectorhead.jpg");
+}
+.ballpit{
+  background-image: url("/code/ballpit.png");
 }
 
 html {
