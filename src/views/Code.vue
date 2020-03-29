@@ -2,7 +2,19 @@
   <div id="container">
     <Spider />
     <section id="gallery">
-      <div class="thumbnail">
+      <div v-for="thumbnail in thumbnails" :key="thumbnail" class="thumbnail">
+        <div class="img-container">
+          <div :class="`${getName(thumbnail)} size`"></div>
+          <div class="img-caption table">
+            <span class="table-cell">
+              <button class="btn btn-p btn-trans" role="button">
+                {{ getName(thumbnail) }}
+              </button>
+            </span>
+          </div>
+        </div>
+      </div>
+      <!-- <div class="thumbnail">
         <div class="img-container">
           <div class="divz size"></div>
           <div class="img-caption table">
@@ -52,90 +64,9 @@
           </div>
         </div>
       </div>
-      <!-- <div class="thumbnail">
-        <div class="img-container">
-          <img
-            src="https://40.media.tumblr.com/1737973fac23511856e8f44c24497cf7/tumblr_nvup8h1pon1sfie3io1_1280.jpg"
-            alt="..."
-          />
-          <div class="img-caption table">
-            <span class="table-cell">
-              <button class="btn btn-p btn-trans" role="button">View</button>
-            </span>
-          </div>
-        </div>
-      </div>
       <div class="thumbnail">
         <div class="img-container">
-          <img
-            src="https://40.media.tumblr.com/765f0e85606e029c185088685223b5dc/tumblr_nvuoz39fFT1sfie3io1_1280.jpg"
-            alt="..."
-          />
-          <div class="img-caption table">
-            <span class="table-cell">
-              <button class="btn btn-p btn-trans" role="button">View</button>
-            </span>
-          </div>
-        </div>
-      </div>
-      <div class="thumbnail">
-        <div class="img-container">
-          <img
-            src="https://40.media.tumblr.com/8a3a1ab1eaeaaeb2306d50df051930c4/tumblr_nvuoz0xDRZ1sfie3io1_1280.jpg"
-            alt="..."
-          />
-          <div class="img-caption table">
-            <span class="table-cell">
-              <button class="btn btn-p btn-trans" role="button">View</button>
-            </span>
-          </div>
-        </div>
-      </div>
-      <div class="thumbnail">
-        <div class="img-container">
-          <img
-            src="https://41.media.tumblr.com/4251d957707c195dacd2bec13b2f67c1/tumblr_nvuoofddGR1sfie3io1_1280.jpg"
-            alt="..."
-          />
-          <div class="img-caption table">
-            <span class="table-cell">
-              <button class="btn btn-p btn-trans" role="button">View</button>
-            </span>
-          </div>
-        </div>
-      </div>
-      <div class="thumbnail">
-        <div class="img-container">
-          <img
-            src="https://40.media.tumblr.com/2d87bcab0408eb0244edd4af38325dac/tumblr_nvm0diPG8H1sfie3io1_1280.jpg"
-            alt="..."
-          />
-          <div class="img-caption table">
-            <span class="table-cell">
-              <button class="btn btn-p btn-trans" role="button">View</button>
-            </span>
-          </div>
-        </div>
-      </div>
-      <div class="thumbnail">
-        <div class="img-container">
-          <img
-            src="https://41.media.tumblr.com/f001942d40a60589d601273cf82bb1a2/tumblr_nvuoobz21w1sfie3io1_1280.jpg"
-            alt="..."
-          />
-          <div class="img-caption table">
-            <span class="table-cell">
-              <button class="btn btn-p btn-trans" role="button">View</button>
-            </span>
-          </div>
-        </div>
-      </div>
-      <div class="thumbnail">
-        <div class="img-container">
-          <img
-            src="https://40.media.tumblr.com/3b7733f03aae7f2e492a80f2308d3381/tumblr_ntgu7aT5Vm1sfie3io1_1280.jpg"
-            alt="..."
-          />
+          <div class="unicode size"></div>
           <div class="img-caption table">
             <span class="table-cell">
               <button class="btn btn-p btn-trans" role="button">View</button>
@@ -151,12 +82,26 @@
 import Vue from "vue";
 import { Component } from "vue-property-decorator";
 import Spider from "@/components/Spider.vue";
+import axios from "axios";
+
 @Component({
   components: {
     Spider
   }
 })
-export default class Code extends Vue {}
+export default class Code extends Vue {
+  thumbnails: string[] = [];
+  async created() {
+    const response = await axios.get("/code");
+    this.thumbnails = response.data;
+    console.log("this.thumbnails", this.thumbnails);
+  }
+  getName(thumbnail: string): string {
+    const dot = thumbnail.indexOf(".");
+    console.log("thumbnail", thumbnail.slice(0, dot));
+    return thumbnail.slice(0, dot);
+  }
+}
 </script>
 
 <style lang="scss" scoped>
@@ -194,6 +139,12 @@ $btn-transparent-bg: rgba(145, 143, 131, 0.5);
 }
 .ballpit{
   background-image: url("/code/ballpit.png");
+}
+.unicode{
+  background-image: url("/code/unicode.png");
+}
+.dragAndDrop{
+  background-image: url("/code/dragAndDrop.jpg");
 }
 
 html {
@@ -262,7 +213,7 @@ html {
   }
   .btn {
     border: none;
-    font-size: inherit;
+    font-size: .8em !important;
     font-weight: $font-weight;
     color: $btn-transparent-color;
     display: inline-block;

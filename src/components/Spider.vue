@@ -3,7 +3,7 @@
     <img
       ref="spiderLogo"
       class="spiderLogo"
-      src="spiderLogoLong.png"
+      src="/spiderLogoLong.png"
       alt="logo"
       height="200"
       width="90"
