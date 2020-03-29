@@ -40,11 +40,9 @@ export default class Code extends Vue {
   async created() {
     const response = await axios.get("/code");
     this.thumbnails = response.data;
-    console.log("this.thumbnails", this.thumbnails);
   }
   getName(thumbnail: string): string {
     const dot = thumbnail.indexOf(".");
-    console.log("thumbnail", thumbnail.slice(0, dot));
     return thumbnail.slice(0, dot);
   }
 }
