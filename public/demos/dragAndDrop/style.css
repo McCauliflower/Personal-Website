@@ -1,0 +1,43 @@
+body {
+  background: #E4F8F7;
+  margin: 0;
+  padding: 0;
+  width: 1000px;
+  height: 1000px;
+}
+
+.over{
+  height:10px !important;
+  width:10px !important;
+}
+[draggable] {
+  cursor: move;
+}
+
+.skin{
+  height:200px;
+}
+.eyes{
+  width:60px;
+}
+.hair{
+  height:130px;
+}
+.nose{
+  width:50px;
+}
+.mustache{
+  height:50px;
+}
+#mustache05{
+  width:100px;
+}
+#mustache07{
+  width:100px;
+}
+#mustache09{
+  width:50px;
+}
+#hair02{
+  width:150px;
+}

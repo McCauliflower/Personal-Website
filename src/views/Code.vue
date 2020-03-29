@@ -7,73 +7,19 @@
           <div :class="`${getName(thumbnail)} size`"></div>
           <div class="img-caption table">
             <span class="table-cell">
-              <button class="btn btn-p btn-trans" role="button">
-                {{ getName(thumbnail) }}
-              </button>
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                :href="`/demos/${getName(thumbnail)}/index.html`"
+              >
+                <button class="btn btn-p btn-trans" role="button">
+                  {{ getName(thumbnail) }}
+                </button>
+              </a>
             </span>
           </div>
         </div>
       </div>
-      <!-- <div class="thumbnail">
-        <div class="img-container">
-          <div class="divz size"></div>
-          <div class="img-caption table">
-            <span class="table-cell">
-              <button class="btn btn-p btn-trans" role="button">View</button>
-            </span>
-          </div>
-        </div>
-      </div>
-      <div class="thumbnail">
-        <div class="img-container">
-          <div class="robotBuilder size"></div>
-          <div class="img-caption table">
-            <span class="table-cell">
-              <button class="btn btn-p btn-trans" role="button">View</button>
-            </span>
-          </div>
-        </div>
-      </div>
-      <div class="thumbnail">
-        <div class="img-container">
-          <div class="thesis size"></div>
-          <div class="img-caption table">
-            <span class="table-cell">
-              <button class="btn btn-p btn-trans" role="button">View</button>
-            </span>
-          </div>
-        </div>
-      </div>
-      <div class="thumbnail">
-        <div class="img-container">
-          <div class="dragAndDrop size"></div>
-          <div class="img-caption table">
-            <span class="table-cell">
-              <button class="btn btn-p btn-trans" role="button">View</button>
-            </span>
-          </div>
-        </div>
-      </div>
-      <div class="thumbnail">
-        <div class="img-container">
-          <div class="ballpit size"></div>
-          <div class="img-caption table">
-            <span class="table-cell">
-              <button class="btn btn-p btn-trans" role="button">View</button>
-            </span>
-          </div>
-        </div>
-      </div>
-      <div class="thumbnail">
-        <div class="img-container">
-          <div class="unicode size"></div>
-          <div class="img-caption table">
-            <span class="table-cell">
-              <button class="btn btn-p btn-trans" role="button">View</button>
-            </span>
-          </div>
-        </div>
-      </div> -->
     </section>
   </div>
 </template>
@@ -156,7 +102,7 @@ html {
   max-width: 960px;
   margin: 0 auto;
   text-align: center;
-  padding: 150px 0 360px 0;
+  padding: 200px 0 360px 0;
   p {
     color: $almost-white;
     padding: 0 40px;

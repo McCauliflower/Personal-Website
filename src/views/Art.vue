@@ -8,17 +8,17 @@
           src="/art/bioMechanicalBinaryForest.jpg"
           alt="Binary Forest Art"
         />
-        <img class="image" src="/cubes.png" alt="Cubes Art" />
+        <img class="image" src="/art/cubes.png" alt="Cubes Art" />
         <img
           class="image"
           src="art/forestFire.png"
           alt="Forest Fire Art"
           style="margin-top: 50px; width: 100%; height: 80%;"
         />
-        <img class="image" src="/landscape.jpg" alt="Landscape Art" />
+        <img class="image" src="/art/landscape.jpg" alt="Landscape Art" />
         <img
           class="image"
-          src="/paintTear.jpg"
+          src="/art/paintTear.jpg"
           alt="Paint tear Art"
           style="margin-top: 10px"
         />
@@ -30,7 +30,7 @@
         />
         <img
           class="image"
-          src="/IncanIncarnation.jpg"
+          src="/art/IncanIncarnation.jpg"
           alt="Incan Incarnation Art"
         />
         <img
@@ -41,7 +41,7 @@
         />
         <img
           class="image"
-          src="/lucious.jpg"
+          src="/art/lucious.jpg"
           alt="Lucious Art"
           style="margin-top: -25px"
         />

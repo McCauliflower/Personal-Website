@@ -1,6 +1,7 @@
 <template>
   <div id="spiderContainer" @click="navigateHome()">
     <img
+      title="Back to Home"
       ref="spiderLogo"
       class="spiderLogo"
       src="/spiderLogoLong.png"
