@@ -1,5 +1,6 @@
 <template>
   <div id="container">
+    <Spider />
     <div class="carousel">
       <figure>
         <img
@@ -11,7 +12,7 @@
         <img
           class="image"
           src="/forest-fire.png"
-          alt=""
+          alt="Forest Fire Art"
           style="padding-top: 50px; width: 110%; height: 90%;"
         />
         <img class="image" src="/landscape.jpg" alt="Landscape Art" />
@@ -56,8 +57,12 @@
 <script lang="ts">
 import Vue from "vue";
 import { Component } from "vue-property-decorator";
-
-@Component
+import Spider from "@/components/Spider.vue";
+@Component({
+  components: {
+    Spider
+  }
+})
 export default class Art extends Vue {
   /* eslint-disable */
   carousel: any = undefined;
@@ -74,6 +79,11 @@ export default class Art extends Vue {
     this.numImages = this.figure.childElementCount;
     this.theta = (2 * Math.PI) / this.numImages;
     this.nav.addEventListener("click", this.onClick, true);
+
+    setTimeout(() => {
+      const logo: any = this.$refs.spiderLogo;
+      logo.classList.add("slideDownWeb");
+    }, 500);
   }
 
   animateButtons(direction: string) {
@@ -103,7 +113,6 @@ export default class Art extends Vue {
   height: 100vh;
   justify-content: center;
 }
-
 nav {
   transition: all 0.5s ease-out;
   z-index: 1;
