@@ -10,8 +10,10 @@
             height="auto"
             alt="Icon"
         /></a> -->
-        <li class="active"><a id="one" href="/art">Art</a></li>
-        <li><a id="two" href="/code">Code</a></li>
+        <li class="active">
+          <router-link id="one" to="/art">Art</router-link>
+        </li>
+        <li><router-link id="two" to="/code">Code</router-link></li>
         <!-- <li>
           <a id="three" href="#">Portfolio</a>
           <ul>
@@ -53,6 +55,6 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 @import url(navmenu.css);
 </style>
