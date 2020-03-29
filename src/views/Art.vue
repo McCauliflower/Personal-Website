@@ -30,7 +30,7 @@
         />
         <img
           class="image"
-          src="/art/IncanIncarnation.jpg"
+          src="/art/incanIncarnation.jpg"
           alt="Incan Incarnation Art"
         />
         <img
