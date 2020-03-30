@@ -1,19 +1,23 @@
 <template>
   <div id="container">
     <Spider />
-    <section id="gallery">
-      <div v-for="thumbnail in thumbnails" :key="thumbnail" class="thumbnail">
+    <section id="gallery" v-if="thumnails.length">
+      <div
+        v-for="thumbnail in thumbnails"
+        :key="thumbnail.title"
+        class="thumbnail"
+      >
         <div class="img-container">
-          <div :class="`${getName(thumbnail)} size`"></div>
+          <div :class="`${thumbnail.class} size`"></div>
           <div class="img-caption table">
             <span class="table-cell">
               <a
                 target="_blank"
                 rel="noopener noreferrer"
-                :href="`/demos/${getName(thumbnail)}/index.html`"
+                :href="thumbnail.url"
               >
                 <button class="btn btn-p btn-trans" role="button">
-                  {{ getName(thumbnail) }}
+                  {{ thumbnail.title }}
                 </button>
               </a>
             </span>
@@ -38,12 +42,9 @@ import axios from "axios";
 export default class Code extends Vue {
   thumbnails: string[] = [];
   async created() {
-    const response = await axios.get("/code");
+    const response = await axios.get(`${process.env.VUE_APP_BASE_URL}/code`);
+    console.log("response", response);
     this.thumbnails = response.data;
-  }
-  getName(thumbnail: string): string {
-    const dot = thumbnail.indexOf(".");
-    return thumbnail.slice(0, dot);
   }
 }
 </script>
