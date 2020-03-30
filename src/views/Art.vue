@@ -1,46 +1,66 @@
 <template>
   <div id="container">
     <Spider />
-    <div class="carousel">
+    <div v-show="isLoading" class="loader">
+      <img src="/bucketLoader.gif" width="100" height="100" alt="Loading..." />
+    </div>
+    <div v-show="!isLoading" class="carousel">
       <figure>
         <img
           class="image"
+          @load="handleLoad()"
           src="/art/bioMechanicalBinaryForest.jpg"
           alt="Binary Forest Art"
         />
-        <img class="image" src="/art/cubes.png" alt="Cubes Art" />
         <img
           class="image"
-          src="art/forestFire.png"
+          @load="handleLoad()"
+          src="/art/cubes.png"
+          alt="Cubes Art"
+        />
+        <img
+          class="image"
+          @load="handleLoad()"
+          src="/art/forestFire.png"
           alt="Forest Fire Art"
           style="margin-top: 50px; width: 100%; height: 80%;"
         />
-        <img class="image" src="/art/landscape.jpg" alt="Landscape Art" />
         <img
           class="image"
+          @load="handleLoad()"
+          src="/art/landscape.jpg"
+          alt="Landscape Art"
+        />
+        <img
+          class="image"
+          @load="handleLoad()"
           src="/art/paintTear.jpg"
           alt="Paint tear Art"
           style="margin-top: 10px"
         />
         <img
           class="image"
+          @load="handleLoad()"
           src="/art/plantingTheSeedsOfLife.jpeg"
           alt="Planting the seeds of Life Art"
           style="margin-top: -25px"
         />
         <img
           class="image"
+          @load="handleLoad()"
           src="/art/incanIncarnation.jpg"
           alt="Incan Incarnation Art"
         />
         <img
           class="image"
+          @load="handleLoad()"
           src="/art/theEyeOfHorus.jpg"
           alt="The Eye of Horus Art"
           style="margin-top: -35px;"
         />
         <img
           class="image"
+          @load="handleLoad()"
           src="/art/lucious.jpg"
           alt="Lucious Art"
           style="margin-top: -25px"
@@ -83,6 +103,8 @@ export default class Art extends Vue {
   numImages: any = undefined;
   theta: any = undefined;
   currImage = 0;
+  imagesLoaded: number = 0;
+  isLoading: boolean = true;
 
   mounted() {
     this.carousel = document.querySelector(".carousel");
@@ -96,6 +118,12 @@ export default class Art extends Vue {
       const logo: any = this.$refs.spiderLogo;
       logo.classList.add("slideDownWeb");
     }, 500);
+  }
+
+  handleLoad(){
+    this.imagesLoaded++
+    console.log('handle Load', this.imagesLoaded)
+    if(this.imagesLoaded === 8) this.isLoading = false
   }
 
   animateButtons(direction: string) {
@@ -116,6 +144,11 @@ export default class Art extends Vue {
 </script>
 
 <style lang="scss" scoped>
+.loader{
+  position: absolute;
+  top: 250px;
+  width: 100%;
+}
 #container {
   margin: 0;
   font-family: "Ubuntu", sans-serif !important;
