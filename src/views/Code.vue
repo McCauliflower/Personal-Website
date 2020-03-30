@@ -1,7 +1,7 @@
 <template>
   <div id="container">
     <Spider />
-    <section id="gallery" v-if="thumnails.length">
+    <section id="gallery" v-if="thumbnails.length">
       <div
         v-for="thumbnail in thumbnails"
         :key="thumbnail.title"
@@ -42,8 +42,9 @@ import axios from "axios";
 export default class Code extends Vue {
   thumbnails: string[] = [];
   async created() {
-    const response = await axios.get(`${process.env.VUE_APP_BASE_URL}/code`);
-    console.log("response", response);
+    const response = await axios.get(
+      `${process.env.VUE_APP_BASE_URL}/getCodeProjects.json`
+    );
     this.thumbnails = response.data;
   }
 }
