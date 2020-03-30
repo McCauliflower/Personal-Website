@@ -6,6 +6,7 @@
         v-for="thumbnail in thumbnails"
         :key="thumbnail.title"
         class="thumbnail"
+        v-show="thumbnail.title !== 'Robot Builder'"
       >
         <div class="img-container">
           <div :class="`${thumbnail.class} size`"></div>
