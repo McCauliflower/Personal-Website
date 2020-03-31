@@ -142,6 +142,9 @@ export default class Art extends Vue {
   top: 250px;
   width: 100%;
 }
+.image {
+  max-width: 600px;
+}
 #container {
   margin: 0;
   font-family: "Ubuntu", sans-serif !important;
