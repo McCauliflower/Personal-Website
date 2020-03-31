@@ -15,11 +15,7 @@ import NavMenu from "@/components/NavMenu/NavMenu.vue";
     NavMenu
   }
 })
-export default class Art extends Vue {
-  mounted() {
-    console.log("screen.width", screen.width);
-  }
-}
+export default class Art extends Vue {}
 </script>
 
 <style lang="scss">
