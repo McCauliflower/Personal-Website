@@ -7,14 +7,13 @@
 
 <script>
 import NavMenu from "@/components/NavMenu/NavMenu.vue";
-import { Component } from "vue-property-decorator";
 
-@Component({ components: NavMenu })
-export default class Home extends Vue {
-  mounted() {
-    console.log("navigator.userAgent", navigator.userAgent);
+export default {
+  name: "Home",
+  components: {
+    NavMenu
   }
-}
+};
 </script>
 
 <style lang="scss">
