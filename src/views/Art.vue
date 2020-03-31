@@ -72,14 +72,14 @@
           ref="prev"
           class="nav prev"
         >
-          Prev
+          &larr;
         </button>
         <button
           @click.stop="onClick($event, 'next')"
           ref="next"
           class="nav next"
         >
-          Next
+          &rarr;
         </button>
       </nav>
     </div>
@@ -126,8 +126,12 @@ export default class Art extends Vue {
   animateButtons(direction: string) {
     const prev: any = this.$refs.prev;
     const next: any = this.$refs.next;
-    if (direction === "next") next.classList.toggle("nextAnimation");
-    if (direction === "prev") prev.classList.toggle("prevAnimation");
+    if (direction === "next") next.classList.add("nextAnimation");
+    if (direction === "prev") prev.classList.add("prevAnimation");
+    setTimeout(() => {
+      if (direction === "next") next.classList.remove("nextAnimation");
+      if (direction === "prev") prev.classList.remove("prevAnimation");
+    }, 200);
   }
 }
 </script>
@@ -147,6 +151,9 @@ export default class Art extends Vue {
   height: 100vh;
   justify-content: center;
 }
+.nav {
+  font-size: 20px;
+}
 nav {
   transition: all 0.5s ease-out;
   z-index: 1;
@@ -156,12 +163,12 @@ nav {
     z-index: 1;
   }
   .prevAnimation {
-    transition: all 0.5s ease-out;
-    transform: rotateY(-360deg) !important;
+    transition: all 0.2s ease-out;
+    transform: rotateY(-60deg) !important;
   }
   .nextAnimation {
-    transition: all 0.5s ease-out;
-    transform: rotateY(360deg) !important;
+    transition: all 0.2s ease-out;
+    transform: rotateY(60deg) !important;
   }
 }
 
