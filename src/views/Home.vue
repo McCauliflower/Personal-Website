@@ -26,11 +26,12 @@ body {
 #selfieAscii {
   position: absolute;
   bottom: 0;
+  top: 100px;
   background-image: url("/SelfieAscii.png");
   background-color: white;
   height: 90vh;
   width: 100%;
-  background-position: center top;
+  background-position: center bottom;
   background-repeat: no-repeat;
   background-size: contain;
 }
