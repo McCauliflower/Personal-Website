@@ -6,14 +6,20 @@
 </template>
 
 <script>
+import Vue from "vue";
+import { Component } from "vue-property-decorator";
 import NavMenu from "@/components/NavMenu/NavMenu.vue";
 
-export default {
-  name: "Home",
+@Component({
   components: {
     NavMenu
   }
-};
+})
+export default class Art extends Vue {
+  mounted() {
+    console.log("screen.width", screen.width);
+  }
+}
 </script>
 
 <style lang="scss">

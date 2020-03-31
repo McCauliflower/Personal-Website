@@ -5,7 +5,7 @@
       <img src="/bucketLoader.gif" width="100" height="100" alt="Loading..." />
     </div>
     <div v-show="!isLoading" class="carousel">
-      <figure>
+      <figure ref="figure">
         <img
           class="image"
           @load="handleLoad()"
@@ -68,14 +68,14 @@
       </figure>
       <nav @click.stop="">
         <button
-          @click.stop="animateButtons('prev')"
+          @click.stop="onClick($event, 'prev')"
           ref="prev"
           class="nav prev"
         >
           Prev
         </button>
         <button
-          @click.stop="animateButtons('next')"
+          @click.stop="onClick($event, 'next')"
           ref="next"
           class="nav next"
         >
@@ -96,34 +96,31 @@ import Spider from "@/components/Spider.vue";
   }
 })
 export default class Art extends Vue {
-  /* eslint-disable */
-  carousel: any = undefined;
   figure: any = undefined;
-  nav: any = undefined;
-  numImages: any = undefined;
-  theta: any = undefined;
+  numImages = 0;
+  theta = 0;
   currImage = 0;
-  imagesLoaded: number = 0;
-  isLoading: boolean = true;
+  imagesLoaded = 0;
+  isLoading = true;
 
   mounted() {
-    this.carousel = document.querySelector(".carousel");
-    this.figure = this.carousel.querySelector("figure");
-    this.nav = this.carousel.querySelector("nav");
+    this.figure = this.$refs.figure;
     this.numImages = this.figure.childElementCount;
     this.theta = (2 * Math.PI) / this.numImages;
-    this.nav.addEventListener("click", this.onClick, true);
-
-    setTimeout(() => {
-      const logo: any = this.$refs.spiderLogo;
-      logo.classList.add("slideDownWeb");
-    }, 500);
   }
 
-  handleLoad(){
-    this.imagesLoaded++
-    console.log('handle Load', this.imagesLoaded)
-    if(this.imagesLoaded === 8) this.isLoading = false
+  handleLoad() {
+    this.imagesLoaded++;
+    if (this.imagesLoaded === 8) this.isLoading = false;
+  }
+
+  onClick(e: any, direction: string) {
+    const t = e.target;
+    this.animateButtons(direction);
+    if (t.tagName.toUpperCase() != "BUTTON") return;
+    if (t.classList.contains("next")) this.currImage++;
+    else this.currImage--;
+    this.figure.style.transform = `rotateY(${this.currImage * -this.theta}rad)`;
   }
 
   animateButtons(direction: string) {
@@ -132,19 +129,11 @@ export default class Art extends Vue {
     if (direction === "next") next.classList.toggle("nextAnimation");
     if (direction === "prev") prev.classList.toggle("prevAnimation");
   }
-
-  onClick(e: any) {
-    const t = e.target;
-    if (t.tagName.toUpperCase() != "BUTTON") return;
-    if (t.classList.contains("next")) this.currImage++;
-    else this.currImage--;
-    this.figure.style.transform = `rotateY(${this.currImage * -this.theta}rad)`;
-  }
 }
 </script>
 
 <style lang="scss" scoped>
-.loader{
+.loader {
   position: absolute;
   top: 250px;
   width: 100%;
