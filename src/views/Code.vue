@@ -32,7 +32,7 @@
 import Vue from "vue";
 import { Component } from "vue-property-decorator";
 import Spider from "@/components/Spider.vue";
-import axios from "axios";
+import { getCodeProjects } from "@/utils/apiCalls";
 
 @Component({
   components: {
@@ -42,10 +42,7 @@ import axios from "axios";
 export default class Code extends Vue {
   thumbnails: string[] = [];
   async created() {
-    const response = await axios.get(
-      `${process.env.VUE_APP_BASE_URL}/getCodeProjects.json`
-    );
-    this.thumbnails = response.data;
+    this.thumbnails = await getCodeProjects();
   }
 }
 </script>

@@ -25,14 +25,15 @@
 <script lang="ts">
 import Vue from "vue";
 import { Component, Prop } from "vue-property-decorator";
-import { IArtwork } from "@/types/types.interface";
-import axios from "axios";
+import { Artwork } from "@/types/types.interface";
+import { getImages } from "@/utils/apiCalls";
+
 @Component({
   components: {}
 })
 export default class ArtDesktopView extends Vue {
   @Prop() isLoading!: boolean;
-  images: IArtwork[] = [];
+  images: Artwork[] = [];
   figure: any = undefined;
   numImages = 0;
   theta = 0;
@@ -40,17 +41,10 @@ export default class ArtDesktopView extends Vue {
   imagesLoaded = 0;
 
   async mounted() {
-    this.images = await this.getImages();
+    this.images = await getImages();
     this.figure = this.$refs.figure;
     this.numImages = this.images.length;
     this.theta = (2 * Math.PI) / this.numImages;
-  }
-
-  async getImages() {
-    const response = await axios.get(
-      `${process.env.VUE_APP_BASE_URL}/getArtworks.json`
-    );
-    return response.data;
   }
 
   adjustStyle(imageId: number) {
@@ -81,7 +75,6 @@ export default class ArtDesktopView extends Vue {
   onClick(e: any, direction: string) {
     const t = e.target;
     this.animateButtons(direction);
-    if (t.tagName.toUpperCase() != "BUTTON") return;
     if (t.classList.contains("next")) this.currImage++;
     else this.currImage--;
     this.figure.style.transform = `rotateY(${this.currImage * -this.theta}rad)`;
