@@ -7,61 +7,9 @@
         class="image"
         :src="image.src"
         :title="image.title"
+        :style="adjustStyle(image.id)"
         @load="handleLoad()"
       />
-      <!-- <img
-        class="image"
-        @load="handleLoad()"
-        src="/art/cubes.png"
-        alt="Cubes Art"
-      />
-      <img
-        class="image"
-        @load="handleLoad()"
-        src="/art/forestFire.png"
-        alt="Forest Fire Art"
-        style="margin-top: 50px; width: 100%; height: 80%;"
-      />
-      <img
-        class="image"
-        @load="handleLoad()"
-        src="/art/landscape.jpg"
-        alt="Landscape Art"
-      />
-      <img
-        class="image"
-        @load="handleLoad()"
-        src="/art/paintTear.jpg"
-        alt="Paint tear Art"
-        style="margin-top: 10px"
-      />
-      <img
-        class="image"
-        @load="handleLoad()"
-        src="/art/plantingTheSeedsOfLife.jpeg"
-        alt="Planting the seeds of Life Art"
-        style="margin-top: -25px"
-      />
-      <img
-        class="image"
-        @load="handleLoad()"
-        src="/art/incanIncarnation.jpg"
-        alt="Incan Incarnation Art"
-      />
-      <img
-        class="image"
-        @load="handleLoad()"
-        src="/art/theEyeOfHorus.jpg"
-        alt="The Eye of Horus Art"
-        style="margin-top: -35px;"
-      />
-      <img
-        class="image"
-        @load="handleLoad()"
-        src="/art/lucious.jpg"
-        alt="Lucious Art"
-        style="margin-top: -25px"
-      /> -->
     </figure>
     <nav>
       <button @click.stop="onClick($event, 'prev')" ref="prev" class="nav prev">
@@ -91,17 +39,38 @@ export default class ArtDesktopView extends Vue {
   currImage = 0;
   imagesLoaded = 0;
 
-  async created() {
+  async mounted() {
+    this.images = await this.getImages();
+    this.figure = this.$refs.figure;
+    this.numImages = this.images.length;
+    this.theta = (2 * Math.PI) / this.numImages;
+  }
+
+  async getImages() {
     const response = await axios.get(
       `${process.env.VUE_APP_BASE_URL}/getArtworks.json`
     );
-    this.images = response.data;
+    return response.data;
   }
 
-  mounted() {
-    this.figure = this.$refs.figure;
-    this.numImages = this.figure.childElementCount;
-    this.theta = (2 * Math.PI) / this.numImages;
+  adjustStyle(imageId: number) {
+    switch (imageId) {
+      case 3:
+        return "margin-top: 50px; width: 100%; height: 80%;";
+        break;
+      case 5:
+        return "margin-top: 10px";
+        break;
+      case 6:
+        return "margin-top: -25px";
+        break;
+      case 8:
+        return "margin-top: -35px;";
+        break;
+      case 9:
+        return "margin-top: -25px";
+        break;
+    }
   }
 
   handleLoad() {
