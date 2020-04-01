@@ -2,12 +2,14 @@
   <div v-show="!isLoading" class="carousel">
     <figure ref="figure">
       <img
+        v-for="image in images"
+        :key="image.title"
         class="image"
+        :src="image.src"
+        :title="image.title"
         @load="handleLoad()"
-        src="/art/bioMechanicalBinaryForest.jpg"
-        alt="Binary Forest Art"
       />
-      <img
+      <!-- <img
         class="image"
         @load="handleLoad()"
         src="/art/cubes.png"
@@ -59,7 +61,7 @@
         src="/art/lucious.jpg"
         alt="Lucious Art"
         style="margin-top: -25px"
-      />
+      /> -->
     </figure>
     <nav>
       <button @click.stop="onClick($event, 'prev')" ref="prev" class="nav prev">
@@ -75,16 +77,26 @@
 <script lang="ts">
 import Vue from "vue";
 import { Component, Prop } from "vue-property-decorator";
+import { IArtwork } from "@/types/types.interface";
+import axios from "axios";
 @Component({
   components: {}
 })
 export default class ArtDesktopView extends Vue {
   @Prop() isLoading!: boolean;
+  images: IArtwork[] = [];
   figure: any = undefined;
   numImages = 0;
   theta = 0;
   currImage = 0;
   imagesLoaded = 0;
+
+  async created() {
+    const response = await axios.get(
+      `${process.env.VUE_APP_BASE_URL}/getArtworks.json`
+    );
+    this.images = response.data;
+  }
 
   mounted() {
     this.figure = this.$refs.figure;
