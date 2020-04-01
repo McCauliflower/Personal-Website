@@ -2,14 +2,6 @@
   <div v-show="!isLoading" class="carousel">
     <figure ref="figure">
       <img
-        v-for="image in images"
-        :key="image.title"
-        class="image"
-        :src="image.src"
-        :title="image.title"
-        @load="handleLoad()"
-      />
-      <!-- <img
         class="image"
         @load="handleLoad()"
         src="/art/bioMechanicalBinaryForest.jpg"
@@ -67,7 +59,7 @@
         src="/art/lucious.jpg"
         alt="Lucious Art"
         style="margin-top: -25px"
-      /> -->
+      />
     </figure>
     <nav>
       <button @click.stop="onClick($event, 'prev')" ref="prev" class="nav prev">
@@ -83,64 +75,35 @@
 <script lang="ts">
 import Vue from "vue";
 import { Component, Prop } from "vue-property-decorator";
-import axios from "axios";
-import { IArtwork } from "@/types/types.interface";
 @Component({
   components: {}
 })
 export default class ArtDesktopView extends Vue {
   @Prop() isLoading!: boolean;
-  images: IArtwork[] = [];
   figure: any = undefined;
   numImages = 0;
   theta = 0;
   currImage = 0;
   imagesLoaded = 0;
 
-  async mounted() {
-    const response = await axios.get(
-      `${process.env.VUE_APP_BASE_URL}/getArtworks.json`
-    );
-    this.images = response.data;
+  mounted() {
     this.figure = this.$refs.figure;
     this.numImages = this.figure.childElementCount;
     this.theta = (2 * Math.PI) / this.numImages;
   }
 
-  adjustedStyle(imageId: number) {
-    switch (imageId) {
-      case 3:
-        return "margin-top: 50px; width: 100%; height: 80%;";
-        break;
-      case 5:
-        return "margin-top: 10px";
-        break;
-      case 6:
-        return "margin-top: -25px";
-        break;
-      case 8:
-        return "margin-top: -35px;";
-        break;
-      case 9:
-        return "margin-top: -25px";
-        break;
-    }
-  }
-
   handleLoad() {
     this.imagesLoaded++;
-    if (this.imagesLoaded === 9) this.$emit("loaded", false);
+    if (this.imagesLoaded === 8) this.$emit("loaded", false);
   }
 
   onClick(e: any, direction: string) {
     const t = e.target;
     this.animateButtons(direction);
-    console.log("t", t.classList.contains("next"));
+    if (t.tagName.toUpperCase() != "BUTTON") return;
     if (t.classList.contains("next")) this.currImage++;
     else this.currImage--;
-    console.log("this.figure.style.transform ", this.figure.style);
     this.figure.style.transform = `rotateY(${this.currImage * -this.theta}rad)`;
-    console.log("this.figure.style.transform ", this.figure.style);
   }
 
   animateButtons(direction: string) {
