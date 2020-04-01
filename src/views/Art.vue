@@ -4,8 +4,12 @@
     <div v-show="isLoading" class="loader">
       <img src="/bucketLoader.gif" width="100" height="100" alt="Loading..." />
     </div>
-    <art-desktop-view :isLoading="isLoading" @loaded="isLoading = $event" />
-    <art-mobile-view :isLoading="isLoading" />
+    <art-desktop-view
+      :isLoading="isLoading"
+      @loaded="isLoading = $event"
+      v-if="!isMobile"
+    />
+    <art-mobile-view v-if="isMobile" :isLoading="isLoading" />
   </div>
 </template>
 
@@ -24,6 +28,18 @@ import ArtMobileView from "@/components/ArtMobileView.vue";
 })
 export default class Art extends Vue {
   isLoading = true;
+  isMobile = false;
+
+  mounted() {
+    if (
+      /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+        navigator.userAgent
+      ) ||
+      screen.width < 900
+    ) {
+      this.isMobile = true;
+    }
+  }
 }
 </script>
 
