@@ -284,7 +284,7 @@ $images: (
   "/art/landscape.jpg",
   "/art/paintTear.jpg"
 );
-$width: 381px;
+$width: 98%;
 $height: 475px;
 
 * {
@@ -307,7 +307,7 @@ $height: 475px;
 svg {
   position: absolute;
   z-index: 1;
-  width: $width;
+  width: $width / 3;
   height: $height;
 }
 button {
@@ -354,7 +354,7 @@ circle {
   transform: translate(-9px, -8px);
 }
 .right {
-  margin-left: 328px;
+  margin-left: 22%;
   margin-top: 213px;
   border: 1px solid #849494;
   background-color: transparent;
@@ -388,6 +388,7 @@ circle {
 
   .#{$slide}#{$j} {
     background-image: url($image);
+    background-repeat: no-repeat -9999px -9999px;
   }
 }
 .slider {

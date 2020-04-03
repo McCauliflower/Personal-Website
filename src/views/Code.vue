@@ -7,22 +7,18 @@
         :key="thumbnail.title"
         class="thumbnail"
       >
-        <div class="img-container">
-          <div :class="`${thumbnail.class} size`"></div>
-          <div class="img-caption table">
-            <span class="table-cell">
-              <a
-                target="_blank"
-                rel="noopener noreferrer"
-                :href="thumbnail.url"
-              >
+        <a target="_blank" rel="noopener noreferrer" :href="thumbnail.url">
+          <div class="img-container">
+            <div :class="`${thumbnail.class} size`"></div>
+            <div class="img-caption table">
+              <span class="table-cell">
                 <button class="btn btn-p btn-trans" role="button">
                   {{ thumbnail.title }}
                 </button>
-              </a>
-            </span>
+              </span>
+            </div>
           </div>
-        </div>
+        </a>
       </div>
     </section>
   </div>
@@ -30,7 +26,7 @@
 
 <script lang="ts">
 import Vue from "vue";
-import { Component } from "vue-property-decorator";
+import { Component, Prop } from "vue-property-decorator";
 import Spider from "@/components/Spider.vue";
 import { getCodeProjects } from "@/utils/apiCalls";
 
@@ -40,9 +36,13 @@ import { getCodeProjects } from "@/utils/apiCalls";
   }
 })
 export default class Code extends Vue {
+  @Prop() isMobile!: boolean;
   thumbnails: string[] = [];
   async created() {
     this.thumbnails = await getCodeProjects();
+  }
+  mounted() {
+    console.log("isMobile", this.isMobile);
   }
 }
 </script>

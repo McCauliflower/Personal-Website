@@ -4,6 +4,23 @@ import Home from "../views/Home.vue";
 
 Vue.use(VueRouter);
 
+let isMobile = false;
+function detectMob() {
+  const toMatch = [
+    /Android/i,
+    /webOS/i,
+    /iPhone/i,
+    /iPad/i,
+    /iPod/i,
+    /BlackBerry/i,
+    /Windows Phone/i
+  ];
+  return toMatch.some(toMatchItem => {
+    return navigator.userAgent.match(toMatchItem);
+  });
+}
+if (detectMob() || screen.width < 900) isMobile = true;
+
 const routes = [
   {
     path: "/",
@@ -13,12 +30,14 @@ const routes = [
   {
     path: "/art",
     name: "Art",
-    component: () => import(/* webpackChunkName: "about" */ "../views/Art.vue")
+    component: () => import(/* webpackChunkName: "art" */ "../views/Art.vue"),
+    props: { isMobile }
   },
   {
     path: "/code",
     name: "Code",
-    component: () => import(/* webpackChunkName: "about" */ "../views/Code.vue")
+    component: () => import(/* webpackChunkName: "code" */ "../views/Code.vue"),
+    props: { isMobile }
   }
 ];
 

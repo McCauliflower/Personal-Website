@@ -19,7 +19,7 @@
 
 <script lang="ts">
 import Vue from "vue";
-import { Component } from "vue-property-decorator";
+import { Component, Prop } from "vue-property-decorator";
 import Spider from "@/components/Spider.vue";
 import ArtDesktopView from "@/components/ArtDesktopView.vue";
 import ArtMobileView from "@/components/ArtMobileView.vue";
@@ -32,27 +32,8 @@ import ArtMobileView from "@/components/ArtMobileView.vue";
   }
 })
 export default class Art extends Vue {
+  @Prop() isMobile!: boolean;
   isLoading = false;
-  isMobile = false;
-
-  mounted() {
-    if (this.detectMob() || screen.width < 900) this.isMobile = true;
-  }
-
-  detectMob() {
-    const toMatch = [
-      /Android/i,
-      /webOS/i,
-      /iPhone/i,
-      /iPad/i,
-      /iPod/i,
-      /BlackBerry/i,
-      /Windows Phone/i
-    ];
-    return toMatch.some(toMatchItem => {
-      return navigator.userAgent.match(toMatchItem);
-    });
-  }
 }
 </script>
 
