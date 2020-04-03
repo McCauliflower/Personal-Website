@@ -1,6 +1,7 @@
 <template>
-  <div id="spiderContainer" @click="navigateHome()">
+  <div id="spiderContainer">
     <img
+      @click="navigateHome()"
       title="Back to Home"
       ref="spiderLogo"
       class="spiderLogo"
@@ -28,6 +29,7 @@ export default class Spider extends Vue {
     }, 500);
   }
   navigateHome() {
+    console.log("clicked");
     this.logo.classList.remove("slideDownWeb");
     setTimeout(() => {
       this.$router.push({ path: "/" });
