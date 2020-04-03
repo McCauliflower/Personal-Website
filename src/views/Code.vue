@@ -41,9 +41,6 @@ export default class Code extends Vue {
   async created() {
     this.thumbnails = await getCodeProjects();
   }
-  mounted() {
-    console.log("isMobile", this.isMobile);
-  }
 }
 </script>
 
