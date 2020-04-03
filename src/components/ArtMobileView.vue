@@ -284,7 +284,7 @@ $images: (
   "/art/landscape.jpg",
   "/art/paintTear.jpg"
 );
-$width: 581px;
+$width: 481px;
 $height: 475px;
 
 * {
@@ -354,7 +354,7 @@ circle {
   transform: translate(-9px, -8px);
 }
 .right {
-  margin-left: 528px;
+  margin-left: 428px;
   margin-top: 213px;
   border: 1px solid #849494;
   background-color: transparent;
