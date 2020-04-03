@@ -4,8 +4,12 @@
     <div v-show="isLoading" class="loader">
       <img src="/bucketLoader.gif" width="100" height="100" alt="Loading..." />
     </div>
-    <art-desktop-view :isLoading="isLoading" @loaded="isLoading = $event" />
-    <art-mobile-view :isLoading="isLoading" />
+    <art-desktop-view
+      v-if="!isMobile"
+      :isLoading="isLoading"
+      @loaded="isLoading = $event"
+    />
+    <art-mobile-view v-if="isMobile" :isLoading="isLoading" />
   </div>
 </template>
 
@@ -15,6 +19,7 @@ import { Component } from "vue-property-decorator";
 import Spider from "@/components/Spider.vue";
 import ArtDesktopView from "@/components/ArtDesktopView.vue";
 import ArtMobileView from "@/components/ArtMobileView.vue";
+
 @Component({
   components: {
     Spider,
@@ -23,7 +28,14 @@ import ArtMobileView from "@/components/ArtMobileView.vue";
   }
 })
 export default class Art extends Vue {
-  isLoading = true;
+  isLoading = false;
+  isMobile = true;
+
+  mounted() {
+    // if (/iPhone|iPad|iPod/i.test(navigator.userAgent) || screen.width > 900) {
+    //   this.isMobile = true;
+    // }
+  }
 }
 </script>
 
