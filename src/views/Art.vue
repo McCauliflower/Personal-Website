@@ -33,12 +33,25 @@ import ArtMobileView from "@/components/ArtMobileView.vue";
 })
 export default class Art extends Vue {
   isLoading = false;
-  isMobile = true;
+  isMobile = false;
 
   mounted() {
-    // if (/iPhone|iPad|iPod/i.test(navigator.userAgent) || screen.width > 900) {
-    //   this.isMobile = true;
-    // }
+    if (this.detectMob() || screen.width < 900) this.isMobile = true;
+  }
+
+  detectMob() {
+    const toMatch = [
+      /Android/i,
+      /webOS/i,
+      /iPhone/i,
+      /iPad/i,
+      /iPod/i,
+      /BlackBerry/i,
+      /Windows Phone/i
+    ];
+    return toMatch.some(toMatchItem => {
+      return navigator.userAgent.match(toMatchItem);
+    });
   }
 }
 </script>

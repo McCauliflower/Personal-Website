@@ -156,7 +156,6 @@ export default class ArtMobileView extends Vue {
   sliding = false;
   click = true;
   pageShift = 500;
-  transitionPrefix = "circle";
   svg = true;
   totalImages = 5;
 
@@ -210,16 +209,14 @@ export default class ArtMobileView extends Vue {
     if (this.sliding) {
       this.sliding = false;
       if (this.svg) {
-        for (let j = 1; j <= this.totalImages; j++) {
-          const c: any = document.getElementById(this.transitionPrefix + j);
-          c.setAttribute("class", this.transitionPrefix + j + " streak");
-          console.log("streak");
+        for (let i = 1; i <= this.totalImages; i++) {
+          const c: any = document.getElementById("circle" + i);
+          c.setAttribute("class", "circle" + i + " streak");
         }
       } else {
-        for (let j = 10; j <= 18; j++) {
-          const c: any = document.getElementById(this.transitionPrefix + j);
-          c.setAttribute("class", this.transitionPrefix + j + " streak");
-          console.log("streak");
+        for (let i = 10; i <= 18; i++) {
+          const c: any = document.getElementById("circle" + i);
+          c.setAttribute("class", "circle" + i + " streak");
         }
       }
       setTimeout(() => {
@@ -240,16 +237,16 @@ export default class ArtMobileView extends Vue {
 
       setTimeout(() => {
         if (this.svg) {
-          for (let j = 1; j <= this.totalImages; j++) {
-            const c: any = document.getElementById(this.transitionPrefix + j);
+          for (let i = 1; i <= this.totalImages; i++) {
+            const c: any = document.getElementById("circle" + i);
             c.classList.remove("streak");
-            c.setAttribute("class", this.transitionPrefix + j + " step");
+            c.setAttribute("class", "circle" + i + " step");
           }
         } else {
-          for (let j = 10; j <= 18; j++) {
-            const c: any = document.getElementById(this.transitionPrefix + j);
+          for (let i = 10; i <= 18; i++) {
+            const c: any = document.getElementById("circle" + i);
             c.classList.remove("streak");
-            c.setAttribute("class", this.transitionPrefix + j + " step");
+            c.setAttribute("class", "circle" + i + " step");
           }
           this.sliding = true;
         }
@@ -262,7 +259,7 @@ export default class ArtMobileView extends Vue {
 
   mounted() {
     document.addEventListener(
-      "mousedown",
+      "keydown",
       (event: any) => {
         if (event.keyCode == 37) {
           this.leftSlide();
@@ -435,7 +432,7 @@ circle {
   stroke-width: 82px;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 700px) {
   .parent {
     margin-left: 1%;
   }
