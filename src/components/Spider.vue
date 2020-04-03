@@ -29,7 +29,6 @@ export default class Spider extends Vue {
     }, 500);
   }
   navigateHome() {
-    console.log("clicked");
     this.logo.classList.remove("slideDownWeb");
     setTimeout(() => {
       this.$router.push({ path: "/" });
