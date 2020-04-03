@@ -19,7 +19,8 @@ function detectMob() {
     return navigator.userAgent.match(toMatchItem);
   });
 }
-if (detectMob() || screen.width < 900) isMobile = true;
+if (detectMob() || window.innerWidth < 700) isMobile = true;
+if (window.innerWidth > 800) isMobile = false
 
 const routes = [
   {
