@@ -9,7 +9,11 @@
       :isLoading="isLoading"
       @loaded="isLoading = $event"
     />
-    <art-mobile-view v-if="isMobile" :isLoading="isLoading" />
+    <art-mobile-view
+      v-if="isMobile"
+      :isLoading="isLoading"
+      @loaded="isLoading = $event"
+    />
   </div>
 </template>
 

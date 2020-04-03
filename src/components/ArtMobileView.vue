@@ -155,11 +155,10 @@ export default class ArtMobileView extends Vue {
   curpage = 1;
   sliding = false;
   click = true;
-  pagePrefix = "slide";
   pageShift = 500;
   transitionPrefix = "circle";
   svg = true;
-  totalImages = 6;
+  totalImages = 5;
 
   leftSlide() {
     if (this.click) {
@@ -169,7 +168,7 @@ export default class ArtMobileView extends Vue {
       this.svg = true;
       this.click = false;
       for (let i = 1; i <= this.totalImages; i++) {
-        const a1: any = document.getElementById(this.pagePrefix + i);
+        const a1: any = document.getElementById("slide" + i);
         a1.className += " tran";
       }
       setTimeout(() => {
@@ -177,7 +176,7 @@ export default class ArtMobileView extends Vue {
       }, 200);
       setTimeout(() => {
         for (let i = 1; i <= this.totalImages; i++) {
-          const a1: any = document.getElementById(this.pagePrefix + i);
+          const a1: any = document.getElementById("slide" + i);
           a1.classList.remove("tran");
         }
       }, 1400);
@@ -192,7 +191,7 @@ export default class ArtMobileView extends Vue {
       this.svg = false;
       this.click = false;
       for (let i = 1; i <= this.totalImages; i++) {
-        const a1: any = document.getElementById(this.pagePrefix + i);
+        const a1: any = document.getElementById("slide" + i);
         a1.className += " tran";
       }
       setTimeout(() => {
@@ -200,7 +199,7 @@ export default class ArtMobileView extends Vue {
       }, 200);
       setTimeout(() => {
         for (let i = 1; i <= this.totalImages; i++) {
-          const a1: any = document.getElementById(this.pagePrefix + i);
+          const a1: any = document.getElementById("slide" + i);
           a1.classList.remove("tran");
         }
       }, 1400);
@@ -226,10 +225,10 @@ export default class ArtMobileView extends Vue {
       setTimeout(() => {
         for (let i = 1; i <= this.totalImages; i++) {
           if (i == this.curpage) {
-            const a: any = document.getElementById(this.pagePrefix + i);
+            const a: any = document.getElementById("slide" + i);
             a.className += " up1";
           } else {
-            const b: any = document.getElementById(this.pagePrefix + i);
+            const b: any = document.getElementById("slide" + i);
             b.classList.remove("up1");
           }
         }
@@ -273,6 +272,7 @@ export default class ArtMobileView extends Vue {
       },
       false
     );
+    this.$emit("loaded", true);
   }
 }
 </script>
@@ -285,19 +285,16 @@ $images: (
   "/art/cubes.png",
   "/art/forestFire.png",
   "/art/landscape.jpg",
-  "/art/lucious.jpg",
   "/art/paintTear.jpg"
 );
-$width: 681px;
-$height: 384px;
-@import url("https://fonts.googleapis.com/css?family=Heebo:800");
+$width: 581px;
+$height: 475px;
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-
 .parent {
   width: $width;
   height: $height;
@@ -308,18 +305,14 @@ $height: 384px;
   margin: auto auto;
   overflow: hidden;
   position: absolute;
-  -webkit-box-shadow: 0 0 88px 5px rgba(0, 0, 0, 0.75);
-  -moz-box-shadow: 0 0 88px 5px rgba(0, 0, 0, 0.75);
   box-shadow: 0 0 88px 5px rgba(0, 0, 0, 0.75);
 }
-
 svg {
   position: absolute;
   z-index: 1;
   width: $width;
   height: $height;
 }
-
 button {
   position: absolute;
   z-index: 50;
@@ -330,50 +323,42 @@ button {
   border-radius: 50%;
   background: #fff;
   cursor: pointer;
-  -webkit-box-shadow: 0 0 88px 5px rgba(0, 0, 0, 0.75);
-  -moz-box-shadow: 0 0 88px 5px rgba(0, 0, 0, 0.75);
   box-shadow: 0 0 88px 5px rgba(0, 0, 0, 0.75);
 
   &:focus {
     outline-width: 0;
   }
 }
-
 circle {
   stroke: #fff;
   fill: none;
   transition: 0.3s;
 }
-
 #svg1 {
   circle {
     transition-timing-function: linear;
   }
 }
-
 #svg2 {
   circle {
     transition-timing-function: linear;
   }
 }
-
 #Capa_1 {
   position: absolute;
   width: 16px;
   height: 16px;
   transform: translate(-7px, -8px);
 }
-
 #Capa_2 {
   position: absolute;
   width: 16px;
   height: 16px;
   transform: translate(-9px, -8px);
 }
-
 .right {
-  margin-left: 628px;
-  margin-top: 168px;
+  margin-left: 528px;
+  margin-top: 213px;
   border: 1px solid #849494;
   background-color: transparent;
   transition: 0.5s;
@@ -381,10 +366,9 @@ circle {
     background-color: #fff;
   }
 }
-
 .left {
   margin-left: 0.5%;
-  margin-top: 168px;
+  margin-top: 213px;
   border: 1px solid #849494;
   background-color: transparent;
   transition: 0.5s;
@@ -409,7 +393,6 @@ circle {
     background-image: url($image);
   }
 }
-
 .slider {
   position: absolute;
   left: 0;
@@ -419,7 +402,6 @@ circle {
   display: inline-flex;
   overflow: hidden;
 }
-
 .slide1,
 .slide2,
 .slide3,
@@ -432,39 +414,28 @@ circle {
   position: absolute;
   background-position: center;
   background-size: cover;
-  // color: #fff;
-  // font-size: 62px;
-  // padding-top: 138px;
-  // font-weight: 800;
-  // font-family: "Heebo", sans-serif;
-  // text-align: center;
   width: 25%;
   height: 100%;
   z-index: 10;
   transition: 1.4s;
 }
-
 .tran {
   transform: scale(1.3);
 }
-
 .up1 {
   z-index: 20;
 }
-
 .up2 {
   z-index: 40;
 }
-
 .step {
   stroke-width: 0;
 }
-
 .streak {
   stroke-width: 82px;
 }
 
-@media (max-width: 700px) {
+@media (max-width: 600px) {
   .parent {
     margin-left: 1%;
   }
