@@ -1,13 +1,7 @@
 <template>
   <div class="parent">
     <div class="slider">
-      <button
-        @mousedown="rightSlide()"
-        type="button"
-        id="right"
-        class="right"
-        name="button"
-      >
+      <button @mousedown="rightSlide()" type="button" id="right" class="right" name="button">
         <svg
           version="1.1"
           id="Capa_1"
@@ -29,13 +23,7 @@
           </g>
         </svg>
       </button>
-      <button
-        @mousedown="leftSlide()"
-        type="button"
-        id="left"
-        class="left"
-        name="button"
-      >
+      <button @mousedown="leftSlide()" type="button" id="left" class="left" name="button">
         <svg
           version="1.1"
           id="Capa_2"
@@ -66,69 +54,15 @@
         <circle id="circle9" class="circle9 step" cx="34px" cy="49%" r="660" />
       </svg>
       <svg id="svg1" class="up2">
-        <circle
-          id="circle10"
-          class="circle10 step"
-          cx="648px"
-          cy="49%"
-          r="20"
-        />
-        <circle
-          id="circle11"
-          class="circle11 step"
-          cx="648px"
-          cy="49%"
-          r="100"
-        />
-        <circle
-          id="circle12"
-          class="circle12 step"
-          cx="648px"
-          cy="49%"
-          r="180"
-        />
-        <circle
-          id="circle13"
-          class="circle13 step"
-          cx="648px"
-          cy="49%"
-          r="260"
-        />
-        <circle
-          id="circle14"
-          class="circle14 step"
-          cx="648px"
-          cy="49%"
-          r="340"
-        />
-        <circle
-          id="circle15"
-          class="circle15 step"
-          cx="648px"
-          cy="49%"
-          r="420"
-        />
-        <circle
-          id="circle16"
-          class="circle16 step"
-          cx="648px"
-          cy="49%"
-          r="500"
-        />
-        <circle
-          id="circle17"
-          class="circle17 step"
-          cx="648px"
-          cy="49%"
-          r="580"
-        />
-        <circle
-          id="circle18"
-          class="circle18 step"
-          cx="648px"
-          cy="49%"
-          r="660"
-        />
+        <circle id="circle10" class="circle10 step" cx="648px" cy="49%" r="20" />
+        <circle id="circle11" class="circle11 step" cx="648px" cy="49%" r="100" />
+        <circle id="circle12" class="circle12 step" cx="648px" cy="49%" r="180" />
+        <circle id="circle13" class="circle13 step" cx="648px" cy="49%" r="260" />
+        <circle id="circle14" class="circle14 step" cx="648px" cy="49%" r="340" />
+        <circle id="circle15" class="circle15 step" cx="648px" cy="49%" r="420" />
+        <circle id="circle16" class="circle16 step" cx="648px" cy="49%" r="500" />
+        <circle id="circle17" class="circle17 step" cx="648px" cy="49%" r="580" />
+        <circle id="circle18" class="circle18 step" cx="648px" cy="49%" r="660" />
       </svg>
       <div id="slide1" class="slide1 up1"></div>
       <div id="slide2" class="slide2"></div>
@@ -269,7 +203,7 @@ export default class ArtMobileView extends Vue {
       },
       false
     );
-    this.$emit("loaded", false);
+    this.$emit("isLoading", false);
   }
 }
 </script>

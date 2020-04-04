@@ -12,12 +12,8 @@
       />
     </figure>
     <nav>
-      <button @click.stop="onClick($event, 'prev')" ref="prev" class="nav prev">
-        &larr;
-      </button>
-      <button @click.stop="onClick($event, 'next')" ref="next" class="nav next">
-        &rarr;
-      </button>
+      <button @click.stop="onClick($event, 'prev')" ref="prev" class="nav prev">&larr;</button>
+      <button @click.stop="onClick($event, 'next')" ref="next" class="nav next">&rarr;</button>
     </nav>
   </div>
 </template>
@@ -69,7 +65,7 @@ export default class ArtDesktopView extends Vue {
 
   handleLoad() {
     this.imagesLoaded++;
-    if (this.imagesLoaded === 8) this.$emit("loaded", false);
+    if (this.imagesLoaded === 8) this.$emit("isLoading", false);
   }
 
   onClick(e: any, direction: string) {
