@@ -269,7 +269,7 @@ export default class ArtMobileView extends Vue {
       },
       false
     );
-    this.$emit("loaded", true);
+    this.$emit("loaded", false);
   }
 }
 </script>
