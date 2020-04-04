@@ -15,7 +15,7 @@
       >
         <a target="_blank" rel="noopener noreferrer" :href="thumbnail.url">
           <div class="img-container">
-            <div :class="`${thumbnail.class} size`"></div>
+            <div :class="[getClassName(thumbnail.id), 'size']"></div>
             <div class="img-caption table">
               <span class="table-cell">
                 <button class="btn btn-p btn-trans" role="button">
@@ -46,6 +46,28 @@ export default class Code extends Vue {
   thumbnails: string[] = [];
   async created() {
     this.thumbnails = await getCodeProjects();
+  }
+  getClassName(id: number) {
+    switch (id) {
+      case 1:
+        return "divz";
+        break;
+      case 2:
+        return "dragAndDrop";
+        break;
+      case 3:
+        return "ballpit";
+        break;
+      case 4:
+        return "robotBuilder";
+        break;
+      case 5:
+        return "thesis";
+        break;
+      case 6:
+        return "unicode";
+        break;
+    }
   }
 }
 </script>
