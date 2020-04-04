@@ -2,6 +2,12 @@
   <div id="container">
     <Spider />
     <section id="gallery" v-if="thumbnails.length">
+      <div v-if="isMobile" class="warn">
+        <p>
+          &#9888; Note: most of the code samples do not work on small screens.
+          Please view from a desktop for a bug free experience
+        </p>
+      </div>
       <div
         v-for="thumbnail in thumbnails"
         :key="thumbnail.title"
@@ -54,6 +60,16 @@ $almost-white: rgb(255, 255, 255);
 $btn-transparent-color: rgb(247, 243, 212);
 $btn-transparent-bg: rgba(145, 143, 131, 0.5);
 
+.warn{
+  height: auto;
+  background: #F8AB49;
+  margin: 10px 20px 20px 20px;
+  border-radius: 10px;
+  border: 1px solid lightgrey;
+  p {
+    color: white !important;
+  }
+}
 #container {
   margin: 0;
   min-height: 100vh;
