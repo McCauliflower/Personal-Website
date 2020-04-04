@@ -4,7 +4,7 @@
     <section id="gallery" v-if="thumbnails.length">
       <div v-if="isMobile" class="warn">
         <p>
-          &#9888; Note: most of the code samples do not work on small screens.
+          &#9888; Note: Most of the code samples do not work on small screens.
           Please view from a desktop for a bug free experience
         </p>
       </div>
