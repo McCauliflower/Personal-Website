@@ -21,7 +21,8 @@ const routes = [
     name: "Code",
     component: () => import(/* webpackChunkName: "code" */ "../views/Code.vue"),
     props: { isMobile: detectMobile() }
-  }
+  },
+  { path: '*', component: () => import(/* webpackChunkName: "home" */ "../views/Home.vue") }
 ];
 
 const router = new VueRouter({
