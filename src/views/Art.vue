@@ -4,16 +4,8 @@
     <div v-show="isLoading" class="loader">
       <img src="/bucketLoader.gif" width="100" height="100" alt="Loading..." />
     </div>
-    <art-desktop-view
-      v-if="!isMobile"
-      :isLoading="isLoading"
-      @loaded="isLoading = $event"
-    />
-    <art-mobile-view
-      v-if="isMobile"
-      :isLoading="isLoading"
-      @loaded="isLoading = $event"
-    />
+    <art-desktop-view v-if="!isMobile" :isLoading="isLoading" @loaded="isLoading = $event" />
+    <art-mobile-view v-if="isMobile" :isLoading="isLoading" @loaded="isLoading = $event" />
   </div>
 </template>
 
@@ -28,8 +20,8 @@ import ArtMobileView from "@/components/ArtMobileView.vue";
   components: {
     Spider,
     ArtDesktopView,
-    ArtMobileView
-  }
+    ArtMobileView,
+  },
 })
 export default class Art extends Vue {
   @Prop() isMobile!: boolean;

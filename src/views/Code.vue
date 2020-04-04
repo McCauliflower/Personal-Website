@@ -100,8 +100,8 @@ $btn-transparent-bg: rgba(145, 143, 131, 0.5);
   height: 100%;
   background-color: white;
   background-position: center top;
-  background-repeat: no-repeat;
   background-size: cover;
+  background-repeat: no-repeat -9999px -9999px;
 }
 .divz{
   background-image: url("/code/divz.jpg");

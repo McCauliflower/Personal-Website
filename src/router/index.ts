@@ -1,26 +1,8 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 import Home from "../views/Home.vue";
-
+import { detectMobile } from "@/utils/helpers";
 Vue.use(VueRouter);
-
-let isMobile = false;
-function detectMob() {
-  const toMatch = [
-    /Android/i,
-    /webOS/i,
-    /iPhone/i,
-    /iPad/i,
-    /iPod/i,
-    /BlackBerry/i,
-    /Windows Phone/i
-  ];
-  return toMatch.some(toMatchItem => {
-    return navigator.userAgent.match(toMatchItem);
-  });
-}
-if (detectMob() || window.innerWidth < 700) isMobile = true;
-if (window.innerWidth > 800) isMobile = false;
 
 const routes = [
   {
@@ -32,13 +14,13 @@ const routes = [
     path: "/art",
     name: "Art",
     component: () => import(/* webpackChunkName: "art" */ "../views/Art.vue"),
-    props: { isMobile }
+    props: { isMobile: detectMobile() }
   },
   {
     path: "/code",
     name: "Code",
     component: () => import(/* webpackChunkName: "code" */ "../views/Code.vue"),
-    props: { isMobile }
+    props: { isMobile: detectMobile() }
   }
 ];
 
