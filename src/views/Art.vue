@@ -24,7 +24,7 @@ import ArtMobileView from "@/components/ArtMobileView.vue";
   },
 })
 export default class Art extends Vue {
-  @Prop() isMobile!: boolean;
+  @Prop(Boolean) isMobile!: boolean;
   isLoading = true;
 }
 </script>

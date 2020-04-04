@@ -8,19 +8,13 @@
           Please view from a desktop for a bug free experience
         </p>
       </div>
-      <div
-        v-for="thumbnail in thumbnails"
-        :key="thumbnail.title"
-        class="thumbnail"
-      >
+      <div v-for="thumbnail in thumbnails" :key="thumbnail.title" class="thumbnail">
         <a target="_blank" rel="noopener noreferrer" :href="thumbnail.url">
           <div class="img-container">
             <div :class="[getClassName(thumbnail.id), 'size']"></div>
             <div class="img-caption table">
               <span class="table-cell">
-                <button class="btn btn-p btn-trans" role="button">
-                  {{ thumbnail.title }}
-                </button>
+                <button class="btn btn-p btn-trans" role="button">{{ thumbnail.title }}</button>
               </span>
             </div>
           </div>
@@ -42,7 +36,7 @@ import { getCodeProjects } from "@/utils/apiCalls";
   }
 })
 export default class Code extends Vue {
-  @Prop() isMobile!: boolean;
+  @Prop(Boolean) isMobile!: boolean;
   thumbnails: string[] = [];
   async created() {
     this.thumbnails = await getCodeProjects();

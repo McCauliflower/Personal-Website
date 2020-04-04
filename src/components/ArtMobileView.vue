@@ -85,7 +85,7 @@ import { Component, Prop } from "vue-property-decorator";
   components: {}
 })
 export default class ArtMobileView extends Vue {
-  @Prop() isLoading!: boolean;
+  @Prop(Boolean) isLoading!: boolean;
   curpage = 1;
   sliding = false;
   click = true;
