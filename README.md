@@ -1,27 +1,31 @@
-# electricalchemy
+<h1 align="center">Welcome to Electric Alchemy 👋</h1>
+<p>
+  <img alt="Version" src="https://img.shields.io/badge/version-0.1.0-blue.svg?cacheSeconds=2592000" />
+</p>
 
-## Project setup
+> Personal Website made with vue.js
 
-```
+### :trollface: [Homepage](https://electricalchemy.io)
+
+## Install
+
+```sh
 yarn install
 ```
 
-### Compiles and hot-reloads for development
+## Run tests
 
-```
-yarn serve
-```
-
-### Run Tests
-
-```
+```sh
 yarn test:unit
 ```
 
-### Customize configuration
+## Author
 
-See [Configuration Reference](https://cli.vuejs.org/config/).
+👤 **McCall Tucker**
 
-# Personal-Website
+- Website: electricAlchemy.io
+- Github: [@electricAlchemy](https://github.com/electricAlchemy)
 
-Portfolio website made with vue.js :spider:
+---
+
+_This README was generated with ❤️ by [readme-md-generator](https://github.com/kefranabg/readme-md-generator)_
