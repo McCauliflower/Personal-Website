@@ -1,4 +1,4 @@
-<h1 align="center">Welcome to Electric Alchemy 👋</h1>
+<h1 align="center">Electric Alchemy :spider: </h1>
 <p>
   <img alt="Version" src="https://img.shields.io/badge/version-0.1.0-blue.svg?cacheSeconds=2592000" />
 </p>
@@ -27,5 +27,3 @@ yarn test:unit
 - Github: [@electricAlchemy](https://github.com/electricAlchemy)
 
 ---
-
-_This README was generated with ❤️ by [readme-md-generator](https://github.com/kefranabg/readme-md-generator)_
