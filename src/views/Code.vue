@@ -98,25 +98,25 @@ $btn-transparent-bg: rgba(145, 143, 131, 0.5);
   background-repeat: no-repeat -9999px -9999px;
 }
 .divz{
-  background-image: url("/code/divz.jpg");
+  background-image: url("/codeimages/divz.jpg");
 }
 .robotBuilder{
-  background-image: url("/code/robotBuilder.png");
+  background-image: url("/codeimages/robotBuilder.png");
 }
 .thesis{
-  background-image: url("/code/thesis.jpg");
+  background-image: url("/codeimages/thesis.jpg");
 }
 .dragAndDrop{
-  background-image: url("/code/vectorhead.jpg");
+  background-image: url("/codeimages/vectorhead.jpg");
 }
 .ballpit{
-  background-image: url("/code/ballpit.png");
+  background-image: url("/codeimages/ballpit.png");
 }
 .unicode{
-  background-image: url("/code/unicode.png");
+  background-image: url("/codeimages/unicode.png");
 }
 .dragAndDrop{
-  background-image: url("/code/dragAndDrop.jpg");
+  background-image: url("/codeimages/dragAndDrop.jpg");
 }
 
 html {
