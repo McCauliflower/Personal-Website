@@ -22,7 +22,7 @@ const routes = [
     component: () => import(/* webpackChunkName: "code" */ "../views/Code.vue"),
     props: { isMobile: detectMobile() }
   },
-  { path: '*', component: () => import(/* webpackChunkName: "home" */ "../views/Home.vue") }
+  { path: '*', component: Home }
 ];
 
 const router = new VueRouter({
