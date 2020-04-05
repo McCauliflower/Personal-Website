@@ -1,55 +1,55 @@
 [{
     "title": "Bio Mechanical Binary Forest",
     "medium": "Acrylic on wood",
-    "src": "/art/bioMechanicalBinaryForest.jpg",
+    "src": "/artimages/bioMechanicalBinaryForest.jpg",
     "id": 1
   },
   {
     "title": "Cubes",
     "medium": "Digital",
-    "src": "/art/cubes.png",
+    "src": "/artimages/cubes.png",
     "id": 2
   },
   {
     "title": "Forest Fire",
     "medium": "Acrylic on canvas",
-    "src": "/art/forestFire.png",
+    "src": "/artimages/forestFire.png",
     "id": 3
   },
   {
     "title": "Landscape",
     "medium": "Acrylic on wood",
-    "src": "/art/landscape.jpg ",
+    "src": "/artimages/landscape.jpg ",
     "id": 4
   },
   {
     "title": "Tear",
     "medium": "Acrylic on canvas",
-    "src": "/art/paintTear.jpg",
+    "src": "/artimages/paintTear.jpg",
     "id": 5
   },
   {
     "title": "Planting the seeds of life",
     "medium": "Acrylic on canvas",
-    "src": "/art/plantingTheSeedsOfLife.jpeg",
+    "src": "/artimages/plantingTheSeedsOfLife.jpeg",
     "id": 6
   },
   {
     "title": "Incan Incarnation",
     "medium": "Acrylic on canvas",
-    "src": "/art/incanIncarnation.jpg",
+    "src": "/artimages/incanIncarnation.jpg",
     "id": 7
   },
   {
     "title": "The Eye of Horus",
     "medium": "Acrylic on canvas",
-    "src": "/art/theEyeOfHorus.jpg",
+    "src": "/artimages/theEyeOfHorus.jpg",
     "id": 8
   },
   {
     "title": "Lucious",
     "medium": "Acrylic on canvas",
-    "src": "/art/lucious.jpg",
+    "src": "/artimages/lucious.jpg",
     "id": 9
   }
 ]

@@ -212,11 +212,11 @@ export default class ArtMobileView extends Vue {
 $circle: "circle";
 $slide: "slide";
 $images: (
-  "/art/bioMechanicalBinaryForest.jpg",
-  "/art/cubes.png",
-  "/art/forestFire.png",
-  "/art/landscape.jpg",
-  "/art/paintTear.jpg"
+  "/artimages/bioMechanicalBinaryForest.jpg",
+  "/artimages/cubes.png",
+  "/artimages/forestFire.png",
+  "/artimages/landscape.jpg",
+  "/artimages/paintTear.jpg"
 );
 $width: 98%;
 $height: 475px;
