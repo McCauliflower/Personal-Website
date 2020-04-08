@@ -16,5 +16,4 @@ export function detectMobile() {
   if (_detectMob() || window.innerWidth < 700) return true;
   if (window.innerWidth > 800) return false;
 }
-
-export const inDevelopment = process.env.NODE_ENV === "development"
+export const env = process.env.NODE_ENV || 'development';
