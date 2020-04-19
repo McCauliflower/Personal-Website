@@ -98,6 +98,8 @@ export default class Code extends Vue {
 </script>
 
 <style lang="scss">
+/* Bugs exist while using scoped css selectors and attaching css to dynamically generated 
+html/javascript so, remove the scope and wrap everthing in a container class */
 $font-family: "Ubuntu", sans-serif !important;
 $font-size-base: 16px;
 $font-weight: 100;
@@ -105,23 +107,16 @@ $bg-color: #444;
 $bg-color2: #666;
 $almost-white: rgb(255, 255, 255);
 $btn-transparent-color: rgb(247, 243, 212);
-$btn-transparent-bg: rgba(145, 143, 131, 0.8);
-
-html {
-  background: linear-gradient($bg-color, $bg-color2);
-  min-height: 100%;
-  font-family: $font-family;
-}
-
-.loader {
-  position: absolute;
-  top: 250px;
-  width: 100%;
-}
+$btn-transparent-bg: rgba(145, 143, 131, 0.95);
 
 #container{
   margin: 0;
   min-height: 100vh;
+  .loader {
+    position: absolute;
+    top: 250px;
+    width: 100%;
+  }
   .warn{
     height: auto;
     background: #F8AB49;
@@ -185,7 +180,7 @@ html {
       width: 100%;
       height: 100%;
       text-align: center;
-      background: rgba(0, 0, 0, 0.2);
+      background: rgba(0, 0, 0, 0.4);
       &:hover{
         background: rgba(0, 0, 0, 0.7);
       }

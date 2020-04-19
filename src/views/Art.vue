@@ -36,6 +36,7 @@ export default class Art extends Vue {
   width: 100%;
 }
 #container {
+  background: white;
   margin: 0;
   font-family: "Ubuntu", sans-serif !important;
   font-size: 16px;
