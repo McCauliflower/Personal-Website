@@ -1,13 +1,15 @@
-import axios from "axios";
+import { artworks, codeProjects } from "@/models/images.ts"
+import { Artwork, CodeProjects } from "@/types/types.interface"
 
-export async function getImages() {
-  const response = await axios.get(
-    `https://electricAlchemy.io/server/artworks`);
-  return response.data;
+// Simulate api calls
+export function getImages(): Promise<Artwork[]> {
+  return new Promise((res, rej) => {
+    setTimeout(() => res(artworks), 500)
+  })
 }
 
-export async function getCodeProjects() {
-  const response = await axios.get(
-    `https://electricAlchemy.io/server/code`);
-  return response.data;
+export function getCodeProjects(): Promise<CodeProjects[]> {
+  return new Promise((res, rej) => {
+    setTimeout(() => res(codeProjects), 500)
+  })
 }
