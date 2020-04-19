@@ -36,7 +36,7 @@ export default class Code extends Vue {
     const projects: CodeProjects[] = await getCodeProjects();
     this.isLoading = false;
     const container = document.querySelector('#gallery') as HTMLElement
-    // Create the html dynamically so we can loop over data and css background images from an api call
+    // Create the html dynamically so we can loop over data and create css background images from an api call
     projects.forEach(project => {
       const wrapper = document.createElement('div')
       const innerWrapper = document.createElement('div')
