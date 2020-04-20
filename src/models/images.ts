@@ -95,9 +95,9 @@ const codeProjects = [{
   "thumbnail": "weather-app.png",
   "id": 7,
   "url": "https://electricAlchemy.io/weather-app"
-}
+},
 {
-  "title": "H-Tree Fractal Generator",
+  "title": "H-Tree Fractal",
   "thumbnail": "random-tree.png",
   "id": 8,
   "url": "/demos/hTreeFractal/index.html"
