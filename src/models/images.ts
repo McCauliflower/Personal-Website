@@ -96,6 +96,12 @@ const codeProjects = [{
   "id": 7,
   "url": "https://electricAlchemy.io/weather-app"
 }
+{
+  "title": "H-Tree Fractal Generator",
+  "thumbnail": "random-tree.png",
+  "id": 8,
+  "url": "/demos/hTreeFractal/index.html"
+}
 ]
 
 export { artworks, codeProjects }
